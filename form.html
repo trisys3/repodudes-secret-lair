@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel = "stylesheet" type="text/css" href="style.css" >
+	<script type="text/Javascript"> 
+</script>
+</head>
+
+<body>
+<form id="form" action="form_info.php" method="post"  >
+
+<div id="content">
+  
+	<ol>
+	
+	<li>
+	<label for="tax_id">Practice Tax ID</label> 
+
+	<input  type="number" name="tax_id" autofocus id="tax_id" maxlength="9" required="required" />	
+	</li>
+
+	<li>
+	<label for="practice_name">Practice Name</label> 
+
+	<input  type="text" name="practice_name" autofocus id="practice_name" maxlength="15" required="required" />	
+	</li>
+	
+	<li>
+	<label for="provider_name">Provider Name</label> 
+
+	<input  type="text" name="provider_name" id="provider_name" maxlength="15" required="required" />	
+	</li>
+	
+	<li>
+	<label for="npi">NPI</label> 
+
+	<input  type="number" name="npi" id="npi" maxlength="10" required="required" />	
+	</li>
+	<li>
+	<label for="assessed_by">Assessment Taken By</label> 
+
+	<input  type="text" name="assessed_by" id="assessed_by" maxlength="15" required="required" />	
+	</li>
+	
+	<li>
+	<label for="met_with">Met With</label> 
+
+	<input  type="text" name="met_with" id="met_with" maxlength="15" />	
+	</li>
+	
+	<li>
+	<label for="assess_date">Assessment Date</label> 
+
+	<input  type="date" name="assess_date" id="assess_date" placeholder="mm/dd/yyyy" required="required" 
+	pattern="^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/((19|20)\d\d)" 	/>		
+	</li>
+	
+	<li>
+	<label for="goLive_date">Product Go Live Date</label> 
+
+	<input  type="date" name="goLive_date" id="goLive_date" placeholder="mm/dd/yyyy"  
+	pattern="^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/((19|20)\d\d)" 	/>	
+	</li>
+	
+	<li>
+	<label for="email">Contact E-mail Address</label>	
+
+	<input type="email" name="email" id="email" maxlength="30" autocomplete="on" required="required" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$" /><br>
+	</li>
+	
+	<li>
+	<label for="vendor">Vendor</label> 
+
+	<input  type="text" name="vendor" id="vendor" maxlength="15" required="required" />	
+	</li>
+	
+	<li>
+	<label for="Product">Product</label> 
+
+	<input  type="text" name="product" id="product" maxlength="15" required="required" />	
+	</li>
+	
+	<li>
+	<label for="version_num">Version Number</label> 
+
+	<input  type="text" name="version_num" id="version_num" maxlength="15"  />	
+	</li>
+	
+	<li>
+	<label for="register">CMS Registered</label> 
+
+	<select>
+	  <option value="yes">Yes</option>
+	  <option value="no">No</option>
+	</select>
+	</li>
+	
+	<li>
+	<label for="certificate_num">ONC Certification Number (On CHPL) </label> 
+	<input type="number" name="certificate_num" id="certificate_num" required="required" >
+	</li>
+	<br>
+	<li>
+	<label for="medicare">Medicare or Medicaid</label> 
+
+	<select>
+	  <option value="medicare">Medicare</option>
+	  <option value="saab">Medicaid</option>
+	  <option value="opel">Neither</option>
+	</select>
+	</li>
+	
+	<br><br><br>
+	<div id="button">
+	<input type= "submit" id="submit" value="SUBMIT" />
+	</div>
+	<br><br>
+	</ol>
+	
+</div>
+</form>
+
+</body>
+
+</html>
+
+	
