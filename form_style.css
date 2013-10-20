@@ -5,18 +5,18 @@
 	font-family: "Times New Roman",Georgia,Serif;
 	font-size: 22px;
 	border: 1px solid green;
-	
-}
-fieldset{
-width: 800px;
-padding-top: 5px;
 }
 
-#content label { 	width: 270px;
-		float: left;
-		padding-left: 50px;
-			
-	}
+fieldset{
+	width: 800px;
+	padding-top: 5px;
+}
+
+#content label {
+	width: 270px;
+	float: left;
+	padding-left: 50px;
+}
 	
 ol {list-style: none;}
 
@@ -31,7 +31,6 @@ li { padding: 10px;}
 	width: 120px;
 	height: 40px;
 	float: right;
-		
 }
 
 #main{
