@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<form id="form" action="form_info.php" method="post"  >
+<form id="form" action="add_info.php" method="post"  >
 
 <div id="content">
   
@@ -90,7 +90,7 @@
 	<li>
 	<label for="register">CMS Registered</label> 
 
-	<select>
+	<select name="register">
 	  <option value="yes">Yes</option>
 	  <option value="no">No</option>
 	</select>
@@ -98,13 +98,13 @@
 	
 	<li>
 	<label for="certificate_num">ONC Certification Number (On CHPL) </label> 
-	<input type="number" name="certificate_num" id="certificate_num" required="required" >
+	<input type="text" name="certificate_num" id="certificate_num" required="required" >
 	</li>
 	<br>
 	<li>
 	<label for="medicare">Medicare or Medicaid</label> 
 
-	<select>
+	<select name="type_medicare">
 	  <option value="medicare">Medicare</option>
 	  <option value="saab">Medicaid</option>
 	  <option value="opel">Neither</option>
