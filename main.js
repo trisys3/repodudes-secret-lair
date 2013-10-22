@@ -1,3 +1,3 @@
 $(document).ready(function() {
-	$("title").html("Assessment Page");
+	$("title").html($(".titlename").data("title"));
 });
