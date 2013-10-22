@@ -17,13 +17,13 @@ $sql = "select * from providers where NPI = $npi and Tax_ID = $taxId ";
 ($result = mysql_query($sql)) or die(mysql_error());
 
 $number = mysql_num_rows($result);
-print"<br>number of row " . $number;
+// print"<br>number of row " . $number;
 
 if($number > 0 ){
 	
 	//redirect user to assessment tool
-	print"Redirect user to assessment tool";
-	header("refresh:2; url= Assessment.html"); 
+	// print"Redirect user to assessment tool";
+	header("refresh:0; url= assessform.php"); 
 }
  else {
     print "Invalid username or password. Try again<br>";

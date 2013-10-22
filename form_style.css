@@ -33,7 +33,7 @@ li { padding: 10px;}
 	float: right;
 }
 
-#main{
+.main{
 	width: 900px;
 	margin: auto;
 	font-family: "Times New Roman",Georgia,Serif;

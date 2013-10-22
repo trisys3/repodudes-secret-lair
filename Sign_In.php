@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<link rel = "stylesheet" type="text/css" href="style.css" >
-	<script type="text/Javascript"> 
-</script>
-</head>
+<?php include("header.php"); ?>
 
-<body>
+<div class="titlename" data-title="Log In Page">
 
-<div id="main">
+<div class="main">
 <form id="SignIn" action="logIn.php" method="post"  >
 
 	<div id="left_column">
@@ -44,6 +37,8 @@
 		
 		New member &nbsp; &nbsp; <a href="form.html">Register here</a>
 	</div>
+
+</div>
 
 </div>
 </body>

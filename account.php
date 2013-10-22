@@ -10,7 +10,7 @@
 
 	$dbh = mysql_connect ( $conn, $username, $password )
   	or die ( "Unable to connect to MySQL database" );
-	print "Connected to MySQL<br>";
+	// print "Connected to MySQL<br>";
 	mysql_select_db( $proj );
 
 ?>

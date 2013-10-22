@@ -36,7 +36,7 @@ $practice_name = $_REQUEST ['practice_name'];
 	
 	//redirect user to assessment tool
 	
-	header("refresh:4; url= Assessment.html"); 
+	header("refresh:4; url= Assessment.php"); 
 	
 	
 
