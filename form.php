@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<link rel = "stylesheet" type="text/css" href="style.css" >
-	<script type="text/Javascript"> 
-	</script>
-</head>
-
-<body>
+<?php include("header.php"); ?>
 	<form id="form" action="add_info.php" method="post"  >
 
 		<div id="content">

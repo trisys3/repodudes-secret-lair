@@ -1,16 +1,4 @@
-<html>
-	<head>
-
-		<meta charset="utf-8" />
-
-		<title>Assessment</title>
-		<link rel="stylesheet" type="text/css" href="test.css" />
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="stylesheet" type="text/css" href="form_style.css" />
-
-	</head>
-
-	<body>
+	<?php include("header.php"); ?>
 		<div id="header">
 			<h1>Assessment</h1>
 		</div>
