@@ -5,6 +5,8 @@
 
 include ("account.php") ;
 
+include("user.php");
+
 // PHP script that get data from the server/browser
 
 $npi = $_REQUEST ['npi'];

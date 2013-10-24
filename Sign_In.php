@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 
-<div class="titlename" data-title="Log In Page">
+<div class="titlename" data-title="Log In Page" id="sign_in_page">
 
 <div class="main">
 <form id="SignIn" action="logIn.php" method="post"  >

@@ -1,377 +1,400 @@
 <?php include("header.php"); ?>
-		<div class="titlename" data-title="Assessment Page">
+		<div class="titlename" data-title="Assessment Page" id="assessform_page">
 			<div id="header">
 				<h1>Assessment</h1>
 			</div>
 
 			<br />
 
-			<form id="assessform" action="assessment.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
-				<div data-quesnum="1">
-					<label>First Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+			<form id="assessform" action="review.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
+				<div data-test-num="1">
+					<label data-tab-row="objname">First Value: </label>
+					<select autofocus="autofocus" data-tabrow="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="FirstValue" value="" />
-					<input type="text" name="FirstValue" value="" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="2">
-					<label>Second Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="2">
+					<label data-tab-row="objname">Second Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<select>
-						<option value="Ans">Yes</option>
-						<option value="Ans">No</option>
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
 					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="3">
-					<label>Third Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="3">
+					<label data-tab-row="objname">Third Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="ThirdValue" value="">
-					<input type="text" name="ThirdValue" value="">
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="4">
-					<label>Fourth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="4">
+					<label data-tab-row="objname">Fourth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="FourthValue" value="">
-					<input type="text" name="FourthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="5">
-					<label>Fifth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="5">
+					<label data-tab-row="objname">Fifth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="FifthValue" value="">
-					<input type="text" name="FifthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="6">
-					<label>Sixth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="6">
+					<label data-tab-row="objname">Sixth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="SixthValue" value="">
-					<input type="text" name="SixthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="7">
-					<label>Seventh Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="7">
+					<label data-tab-row="objname">Seventh Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="SeventhValue" value="">
-					<input type="text" name="SeventhValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="8">
-					<label>Eigth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="8">
+					<label data-tab-row="objname">Eigth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="EigthValue" value="">
-					<input type="text" name="EigthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="9">
-					<label>Ninth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="9">
+					<label data-tab-row="objname">Ninth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="NinthValue" value="">
-					<input type="text" name="NinthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="10">
-					<label>Tenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="10">
+					<label data-tab-row="objname">Tenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<select>
-						<option value="Ans">Yes</option>
-						<option value="Ans">No</option>
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
 					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="11">
-					<label>Eleventh Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="11">
+					<label data-tab-row="objname">Eleventh Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="EleventhValue" value="">
-					<input type="text" name="EleventhValue" value="">
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
+					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="12">
-					<label>Twelfth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="12">
+					<label data-tab-row="objname">Twelfth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="TwelfthValue" value="">
-					<input type="text" name="TwelfthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="13">
-					<label>Thirteenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="13">
+					<label data-tab-row="objname">Thirteenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="ThirteenthValue" value="">
-					<input type="text" name="ThirteenthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="14">
-					<label>Fourteenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="14">
+					<label data-tab-row="objname">Fourteenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="FourteenthValue" value="">
-					<input type="text" name="FourteenthValue" value="">
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
+					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="15">
-					<label>Fifteenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="15">
+					<label data-tab-row="objname">Fifteenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="FifteenthValue" value="">
-					<input type="text" name="FifteenthValue" value="">
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
+					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="16">
-					<label>Sixteenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="16">
+					<label data-tab-row="objname">Sixteenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<select>
-						<option value="Ans">Yes</option>
-						<option value="Ans">No</option>
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
 					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="17">
-					<label>Seventeenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="17">
+					<label data-tab-row="objname">Seventeenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="SeventeenthValue" value="">
-					<input type="text" name="SeventeenthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="18">
-					<label>Eighteenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="18">
+					<label data-tab-row="objname">Eighteenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<select>
-						<option value="Ans">Yes</option>
-						<option value="Ans">No</option>
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
 					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="19">
-					<label>Nineteenth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="19">
+					<label data-tab-row="objname">Nineteenth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="NineteenthValue" value="">
-					<input type="text" name="NineteenthValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="20">
-					<label>Twentieth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="20">
+					<label data-tab-row="objname">Twentieth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="TwentiethValue" value="">
-					<input type="text" name="TwentiethValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="21">
-					<label>Twenty-First Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="21">
+					<label data-tab-row="objname">Twenty-First Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="Twenty-FirstValue" value="">
-					<input type="text" name="Twenty-FirstValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="22">
-					<label>Twenty-Second Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="22">
+					<label data-tab-row="objname">Twenty-Second Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="Twenty-SecondValue" value="">
-					<input type="text" name="Twenty-SecondValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="23">
-					<label>Twenty-Third Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="23">
+					<label data-tab-row="objname">Twenty-Third Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<input type="text" name="Twenty-ThirdValue" value="">
-					<input type="text" name="Twenty-ThirdValue" value="">
+					<input type="text" data-tab-row="numer" value="">
+					<input type="text" data-tab-row="denom" value="">
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="24">
-					<label>Twenty-Fourth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="24">
+					<label data-tab-row="objname">Twenty-Fourth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<select>
-						<option value="Ans">Yes</option>
-						<option value="Ans">No</option>
-						<option value="Ans">Excluded</option>
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
 					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<div data-quesnum="25">
-					<label>Twenty-Fifth Value: </label>
-					<select>
-						<option value="Status">Not started</option>
-						<option value="Status">In Progress</option>
-						<option value="Status">Obstacles</option>
-						<option value="Status">Excluded</option>
-						<option value="Status">Done</option>
+				<div data-test-num="25">
+					<label data-tab-row="objname">Twenty-Fifth Value: </label>
+					<select data-tab-row="status">
+						<option value="Not started">Not started</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Obstacles">Obstacles</option>
+						<option value="Excluded">Excluded</option>
+						<option value="Done">Done</option>
 					</select>
-					<select>
-						<option value="Ans">Yes</option>
-						<option value="Ans">No</option>
-						<option value="Ans">Excluded</option>
+					<select data-tab-row="numer">
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+						<option value="Excluded">Excluded</option>
 					</select>
+					<input type="hidden" data-tab-row="denom" value="1" />
 					<br />
 					<br />
 				</div>
-				<button type="submit">Submit!</button><br /><button type="button">Save</button><br />
+				<button type="submit" name="submit-button" id="submit-button">Submit</button><br />
+				<button type="button">Save</button><br />
 			</form>
 		</div>
 	</body>
