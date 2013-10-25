@@ -6,7 +6,7 @@
 
 			<br />
 
-			<form id="assessform" action="review.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
+			<form id="assessform" action="Review.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
 				<div data-test-num="1">
 					<label data-tab-row="objname">First Value: </label>
 					<select autofocus="autofocus" data-tab-row="status">
@@ -16,8 +16,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -48,8 +48,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -62,8 +62,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -76,8 +76,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -90,8 +90,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -104,8 +104,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -118,8 +118,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -132,8 +132,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -182,8 +182,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -196,8 +196,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -264,8 +264,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -296,8 +296,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -310,8 +310,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -324,8 +324,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -338,8 +338,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>
@@ -352,8 +352,8 @@
 						<option value="excluded">Excluded</option>
 						<option value="done">Done</option>
 					</select>
-					<input type="text" data-tab-row="numer" value="" required="required" />
-					<input type="text" data-tab-row="denom" value="" required="required" />
+					<input type="text" data-tab-row="numer" value="" />
+					<input type="text" data-tab-row="denom" value="" />
 					<br />
 					<br />
 				</div>

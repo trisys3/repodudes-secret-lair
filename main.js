@@ -15,7 +15,15 @@ $(document).ready(function() {
 				assessrows[value][v] = $(this).text();
 			});
 		});
-		console.log(assessrows);
+		
+		$.ajax({
+			url: url,
+			data: assessrows,
+			type: "POST",
+			success: function() {
+				window.location.href = url;
+			},
+		});
 
 	});
 
