@@ -6,14 +6,16 @@ $(document).ready(function() {
 		assessrows = {};
 		url = $(this).attr("action");
 
-		$("*").attr("data-test-num", function(k) {
-			assessrows[k + 1] = {};
-			$("*").attr("data-tab-row", function(v) {
-				assessrows[k + 1][$(this).attr("data-tab-row")] = $(this).val();
+		$("div[data-test-num]").attr("data-test-num", function(index, value) {
+			assessrows[value] = {};
+			$(this).children("input[data-tab-row], select[data-tab-row]").attr("data-tab-row", function(i, v) {
+				assessrows[value][v] = $(this).val();
+			});
+			$(this).children("label[data-tab-row]").attr("data-tab-row", function(i, v) {
+				assessrows[value][v] = $(this).text();
 			});
 		});
 		console.log(assessrows);
-
 
 	});
 
