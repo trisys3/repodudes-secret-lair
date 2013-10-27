@@ -35,7 +35,7 @@
 
 	<div id="right_column">
 		
-		New member &nbsp; &nbsp; <a href="form.html">Register here</a>
+		New member &nbsp; &nbsp; <a href="form.php">Register here</a>
 	</div>
 
 </div>

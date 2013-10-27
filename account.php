@@ -8,9 +8,10 @@
 
 	$proj = "db2_capstone";
 
-	$dbh = mysql_connect ( $conn, $username, $password )
-  	or die ( "Unable to connect to MySQL database" );
-	// print "Connected to MySQL<br>";
-	mysql_select_db( $proj );
+	$njhitec_db = new mysqli($conn, $username, $password, $proj);
+
+	if ($njhitec_db->connect_error) {
+    die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+  }
 
 ?>

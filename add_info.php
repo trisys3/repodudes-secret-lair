@@ -3,7 +3,7 @@
 //Run a PHP script that connects to Database.
 
 
-include ("account.php");
+include ("account_old.php");
 
 
 // PHP script that get data from the server/browser

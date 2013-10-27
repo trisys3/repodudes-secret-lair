@@ -6,7 +6,7 @@
 
 			<br />
 
-			<form id="assessform" action="Review.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
+			<form id="assessform" action="assessment.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
 				<div data-test-num="1">
 					<label data-tab-row="objname">First Value: </label>
 					<select autofocus="autofocus" data-tab-row="status">
