@@ -2,9 +2,8 @@ $(document).ready(function() {
 	$("title").html($(".titlename").data("title"));
 
 	$("#assessform_page").on("submit", "#assessform", function(e) {
-		e.preventDefault();
-		assessrows = {};
-		url = $(this).attr("action");
+		var assessrows = {};
+		var url = $(this).attr("action");
 
 		$("div[data-test-num]").attr("data-test-num", function(index, value) {
 			assessrows[value] = {};
@@ -15,14 +14,15 @@ $(document).ready(function() {
 				assessrows[value][v] = $(this).text();
 			});
 		});
+
+		assessrows2 = {
+			"assessrows": "assessrow"
+		}
 		
 		$.ajax({
 			url: url,
-			data: assessrows,
+			data: assessrows2,
 			type: "POST",
-			success: function() {
-				window.location.href = url;
-			},
 		});
 
 	});
