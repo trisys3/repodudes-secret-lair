@@ -3,7 +3,7 @@
 //Run a PHP script that connects to Database.
 
 
-include ("account_old.php") ;
+include ("account.php") ;
 
 // include("user.php");
 
@@ -16,16 +16,16 @@ $taxId = $_REQUEST ['taxId'];
 //execute select query
 $sql = "select * from providers where NPI = $npi and Tax_ID = $taxId ";
 
-($result = mysql_query($sql)) or die(mysql_error());
+($result = $njhitec_db->query($sql)) or die(mysql_error());
 
-$number = mysql_num_rows($result);
-// print"<br>number of row " . $number;
+$number = $result->num_rows;
+// print"<br>number of rows: " . $number;
 
 if($number > 0 ){
 	
 	//redirect user to assessment tool
 	// print"Redirect user to assessment tool";
-	header("refresh:0; url= assessform.php"); 
+	header("refresh:0; url= assessform.php");
 }
  else {
     print "Invalid username or password. Try again<br>";

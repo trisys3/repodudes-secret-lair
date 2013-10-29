@@ -27,8 +27,7 @@
 
 
 
-		<input  type="number" name="npi" autofocus id="npi" maxlength="10" required="required" 
-		pattern="^[0-9]{10}$"/>	
+		<input  type="number" name="npi" autofocus id="npi" maxlength="10" required="required" pattern="^[0-9]{10}$" />	
 
 		</li>
 
@@ -44,9 +43,11 @@
 
 		</li>
 
+		<br>
+		<span id="alert">The NPI or Practice Tax ID you entered is incorrect. Please try again.</span>
 		
 
-		<br>
+		<br><br>
 
 		
 
@@ -74,7 +75,7 @@
 
 		
 
-		New member &nbsp; &nbsp; <a href="form.html">Register here</a>
+		New member &nbsp; &nbsp; <a href="form.php">Register here</a>
 
 	</div>
 
