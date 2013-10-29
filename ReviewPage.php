@@ -26,6 +26,9 @@
 	$result=mysql_query($query) or die(mysql_error()) ;
 	$query2="SELECT * FROM `objective results`";
 	$result2=mysql_query($query) or die(mysql_error()); 
+	$query3="SELECT * FROM `objectives`";
+	$result3=mysql_query($query3) or die(mysql_error()) ;
+	
 /*
 $host="linuxserver01.s5-tech.com"; // Host name
 $username="db2_capstoneUser"; // username
@@ -85,7 +88,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		$Core++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '11' && $row2['Percent Completed'] == '100' ){
-		$Core++;
+		//$Core++;
 		}	
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '12' && $row2['Percent Completed'] >= '50' ){
 		$Core++;
@@ -94,40 +97,40 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		$Core++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '14' && $row2['Percent Completed'] >= '0' ){
-		$Core++;
+		//$Core++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '15' && $row2['Percent Completed'] == '100' ){
 		$Core++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '16' && $row2['Percent Completed'] == '100' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '17' && $row2['Percent Completed'] >= '40' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '18' && $row2['Percent Completed'] == '100' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '19' && $row2['Percent Completed'] >= '20' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '20' && $row2['Percent Completed'] >= '10' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '21' && $row2['Percent Completed'] >= '10' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '22' && $row2['Percent Completed'] >= '50' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '23' && $row2['Percent Completed'] >= '50' ){
-		$Core++;
+		$Menu++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '24' && $row2['Percent Completed'] >= '100' ){
-		$Core++;
+		$Public++;
 		}
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '25' && $row2['Percent Completed'] >= '100' ){
-		$Core++;
+		$Public++;
 		}
 	
 	}?>
@@ -371,7 +374,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 			<td>Report ambulatory quality measures to CMS or the States.</td>
         	<td>For 2011, provide aggregate numerator and denominator, and 
 			exclusions for Clinical Quality Measures</td>
-            <td <?php if ($row['Percent Completed']=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
+            <td <?php if ($row['Percent Completed']=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#78AB46'";}?> >
 			<?php if($row['Percent Completed']=='100') {
 				echo 'Yes';
 				}
@@ -417,7 +420,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 			care and patient authorized entities.</td>
         	<td>Performed at least one test of certified EHR technology's capacity to 
 			electronically exchange key clinical information.</td>
-            <td>Removed in 2013</td>
+            <td bgcolor='#78AB46'>Removed in 2013</td>
 			<td>Yes</td>
 			
         </tr>
