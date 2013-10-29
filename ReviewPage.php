@@ -69,67 +69,67 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '4' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '5' && $row2['Percent Completed'] * 100 >= '80' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '5' && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '6' && $row2['Percent Completed'] * 100 >= '80' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '6' && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '7' && $row2['Percent Completed'] * 100 >= '80' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '7' && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '8' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '8' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '9' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '9' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '10' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '10' && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '11' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '11' && $row2['Percent Completed'] * 100 == '100' ){
 		//$Core++;
 		}	
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '12' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '12' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '13' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '13' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '14' && $row2['Percent Completed'] * 100 >= '0' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '14' && $row2['Percent Completed'] * 100 >= '0' ){
 		//$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '15' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '15' && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '16' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '16' && $row2['Percent Completed'] * 100 == '100' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '17' && $row2['Percent Completed'] * 100 >= '40' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '17' && $row2['Percent Completed'] * 100 >= '40' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '18' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '18' && $row2['Percent Completed'] * 100 == '100' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '19' && $row2['Percent Completed'] * 100 >= '20' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '19' && $row2['Percent Completed'] * 100 >= '20' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '20' && $row2['Percent Completed'] * 100 >= '10' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '20' && $row2['Percent Completed'] * 100 >= '10' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '21' && $row2['Percent Completed'] * 100 >= '10' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '21' && $row2['Percent Completed'] * 100 >= '10' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '22' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '22' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '23' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '23' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '24' && $row2['Percent Completed'] * 100 >= '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '24' && $row2['Percent Completed'] * 100 >= '100' ){
 		$Public++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '1' && $row2['Objective ID'] == '25' && $row2['Percent Completed'] * 100 >= '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '25' && $row2['Percent Completed'] * 100 >= '100' ){
 		$Public++;
 		}
 	
