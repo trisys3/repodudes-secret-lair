@@ -1,3 +1,9 @@
+<?php include("header.php"); ?>
+
+	<div class="titlename" data-title="Redirecting...">
+
+		<p>Redirecting to results page...</p>
+
 <?php
 
 include("account.php");
@@ -8,12 +14,12 @@ $assess_id;
 $assess_query;
 $assess_res;
 
-$assess_query = "SELECT `Assessment ID` FROM `results` WHERE `NPI`=9876543210 ORDER BY `NPI` DESC LIMIT 1";
+$assess_query = "SELECT `Assessment ID` FROM `results` WHERE `NPI`=$_SESSION[npi] ORDER BY `NPI` DESC LIMIT 1";
 
 $assess_res = $njhitec_db->query($assess_query);
 
 if($assess_res->num_rows > 0) {
-	$assess_row = ($assess_res->fetch_array() + 1);
+	$assess_row = $assess_res->fetch_array();
 }
 else {
 	$assess_row = Array(
@@ -21,7 +27,7 @@ else {
 		'Assessment ID' => '0',
 	);
 }
-$assess_id = $assess_row["Assessment ID"];
+$assess_id = $assess_row["Assessment ID"] + 1;
 
 // start of INSERT statement
 
@@ -66,6 +72,12 @@ for($x = 1; $x < 25; $x++) {
 
 $njhitec_db->multi_query($obj_res_query);
 
-header("refresh:0; url= Review.php");
+header("refresh:0; url= ReviewPage.php");
 
 ?>
+
+	</div>
+
+</body>
+
+</html>

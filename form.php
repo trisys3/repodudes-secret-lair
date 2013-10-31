@@ -96,10 +96,9 @@
 					<label for="medicare">Medicare or Medicaid</label><span class="redreq">*</span>
 
 					<select name="type_medicare">
-						<option value="opel"></option>
 					  <option value="medicare">Medicare</option>
-					  <option value="saab">Medicaid</option>
-					  <option value="opel">Neither</option>
+					  <option value="medicaid">Medicaid</option>
+					  <option value="neither">Neither</option>
 					</select>
 				</li>
 				

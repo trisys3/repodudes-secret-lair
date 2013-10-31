@@ -1,3 +1,8 @@
+<?php
+	
+	session_start();
+	// session data
+?>
 <!DOCTYPE html>
 <html>
 	<head>

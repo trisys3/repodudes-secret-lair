@@ -1,86 +1,80 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<link rel = "stylesheet" type="text/css" href="form_style.css" >
-	<script type="text/Javascript"> 
-</script>
-</head>
-<body>
-<div id="Main_content">
+<?php include "header.php"; ?>
+	<div class="titlename" data-title="Sign-In Page">
+		<div id="Main_content">
 
-<form id="SignIn" action="logIn.php" method="post"  >
+			<form id="SignIn" action="logIn.php" method="post"  >
 
 
 
-	<div id="Left_column">
+				<div id="Left_column">
 
-  
+			  
 
-		<ol>
-
-
-
-		<li>
-
-		<label for="npi">NPI</label> 
+					<ol>
 
 
 
-		<input  type="number" name="npi" autofocus id="npi" maxlength="10" required="required" 
-		pattern="^[0-9]{10}$"/>	
+					<li>
 
-		</li>
-
-		
-
-		<li>
-
-		<label for="taxId">Practice Tax ID</label> 
+					<label for="npi">NPI</label> 
 
 
 
-		<input  type="number" name="taxId" id="taxId" maxlength="9" required="required" pattern="^[0-9]{9}$" />	
+					<input  type="number" name="npi" autofocus id="npi" maxlength="10" size="10" required="required" 
+					pattern="^[0-9]{10}$"/>	
 
-		</li>
+					</li>
 
-		
+					
 
-		<br>
+					<li>
 
-		
-
-		<input type= "submit" id="log_in" value="SIGN IN" />
-
-		
-
-		<br><br>
-
-		</ol>
-
-	
-
-	</div>
+					<label for="taxId">Practice Tax ID</label> 
 
 
 
-</form>
+					<input  type="number" name="taxId" id="taxId" maxlength="9" size="9" required="required" pattern="^[0-9]{9}$" />	
+					</li>
 
-	
+					
+
+					<br>
+
+					
+
+					<input type= "submit" id="log_in" value="SIGN IN" />
+
+					
+
+					<br><br>
+
+					</ol>
+
+				
+
+				</div>
 
 
 
-	<div id="Right_column">
+			</form>
 
-		
+			
 
-		New member &nbsp; &nbsp; <a href="form.html">Register here</a>
+
+
+			<div id="Right_column">
+
+				
+
+				New member &nbsp; &nbsp; <a href="form.php">Register here</a>
+
+			</div>
+
+
+
+		</div>
 
 	</div>
-
-
-
-</div>
 
 </body>
 

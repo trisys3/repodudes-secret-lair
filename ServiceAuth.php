@@ -27,7 +27,7 @@
 
 
 
-		<input  type="number" name="npi" autofocus id="npi" maxlength="10" required="required" pattern="^[0-9]{10}$" />	
+		<input  type="number" name="npi" autofocus id="npi" maxlength="10" size="10" required="required" pattern="^[0-9]{10}$" />	
 
 		</li>
 
@@ -39,7 +39,7 @@
 
 
 
-		<input  type="number" name="taxId" id="taxId" maxlength="9" required="required" pattern="^[0-9]{9}$" />	
+		<input  type="number" name="taxId" id="taxId" maxlength="9" size="9" required="required" pattern="^[0-9]{9}$" />	
 
 		</li>
 
