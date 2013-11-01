@@ -1,3 +1,7 @@
+<?php include("header.php"); ?>
+
+<div class="titlename" data-title="">
+
 <?php
 
 //Run a PHP script that connects to Database.
@@ -33,3 +37,9 @@ if($number > 0 ){
 }
 
 ?>
+
+</div>
+
+</body>
+
+</html>
