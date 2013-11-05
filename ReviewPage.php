@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <html lang="en">
 
 <head>
@@ -15,15 +14,23 @@
 	
 	<?php
 
-	include("account.php");
+	$con=mysql_connect("linuxserver01.s5-tech.com","db2_capstoneUser","NJHITECCapstone2013");
+	// Check connection
+	mysql_select_db("db2_capstone");
+	if (mysqli_connect_errno($con))
+  	{
+  	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
 	
-	$query="SELECT * FROM `objective results`";
-	$result=$njhitec_db->query($query) or die($njhitec_db->error()) ;
-	$query2="SELECT * FROM `objective results`";
-	$result2=$njhitec_db->query($query) or die($njhitec_db->error()); 
-	$query3="SELECT * FROM `objectives`";
-	$result3=$njhitec_db->query($query3) or die($njhitec_db->error()) ;
+	$query = "SELECT * FROM `objective results`";
+	$result = mysql_query($query) or die(mysql_error()) ;
+	$query2 = "SELECT * FROM `objective results`";
+	$result2 = mysql_query($query) or die(mysql_error()); 
+	$query3 = "SELECT * FROM `objectives`";
+	$result3 = mysql_query($query3) or die(mysql_error()) ;
 	
+
+	$query4 = "SELECT Assessment ID FROM 'results' ";
 /*
 $host="linuxserver01.s5-tech.com"; // Host name
 $username="db2_capstoneUser"; // username
@@ -51,7 +58,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <body class="body">
 
-<?php while($row2 = $result2->fetch_array()){  
+<?php while($row2 = mysql_fetch_array($result2)){  
 	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '1' && $row2['Percent Completed'] * 100 >= '30' ){
 		$Core++;
 		}
@@ -209,7 +216,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     </thead>
 </div>
 
-<?php while($row = $result->fetch_array()){  if($row['Assessment ID'] == '0'){?>
+<?php while($row = mysql_fetch_array($result)){  if($row['Assessment ID'] == '0'){?>
 <tbody>
 	<?php if($row['Objective ID'] == '1'){?>
 		<tr>
