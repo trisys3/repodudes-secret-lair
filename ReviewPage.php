@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="en">
 
 <head>
@@ -17,16 +18,15 @@
 	include("account_old.php");
 	
 	$query = "SELECT * FROM `objective results`";
-	$result = mysql_query($query) or die(mysql_error()) ;
+	$result = mysqli_query($dbh, $query) or die(mysqli_error($dbh)) ;
 	$query2 = "SELECT * FROM `objective results`";
-	$result2 = mysql_query($query) or die(mysql_error()); 
+	$result2 = mysqli_query($dbh, $query2) or die(mysqli_error($dbh)); 
 	$query3 = "SELECT * FROM `objectives`";
-	$result3 = mysql_query($query3) or die(mysql_error()) ;
+	$result3 = mysqli_query($dbh, $query3) or die(mysqli_error($dbh)) ;
 	
-
-	$query4 = "SELECT `Assessment ID` FROM 'results' WHERE `NPI` = $_SESSION[npi]  ORDER BY `NPI` DESC LIMIT 1 ";
-	$result4 = $NJHITEC_db->query($query4) or die($NJHITEC_db->error()); 
-	$Assess_num = $result4 -> fetch_row() 
+	$query4 = "SELECT `Assessment ID` FROM `results` WHERE `NPI` = $_SESSION[npi] ORDER BY `NPI` DESC LIMIT 1 ";
+	$result4 = mysqli_query($dbh, $query4) or die(mysqli_error($dbh)); 
+	$Assess_num = mysqli_fetch_row($result4) 
 /*	
 $host="linuxserver01.s5-tech.com"; // Host name
 $username="db2_capstoneUser"; // username
@@ -54,7 +54,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <body class="body">
 
-<?php while($row2 = mysql_fetch_array($result2)){  
+<?php while($row2 = mysqli_fetch_array($result2)){  
 	if($row2['Assessment ID'] == $Assess_num && $row2['Objective ID'] == '1' && $row2['Percent Completed'] * 100 >= '30' ){
 		$Core++;
 		}
@@ -212,7 +212,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     </thead>
 </div>
 
-<?php while($row = mysql_fetch_array($result)){  if($row['Assessment ID'] == '0'){?>
+<?php while($row = mysqli_fetch_array($result)){  if($row['Assessment ID'] == '0'){?>
 <tbody>
 	<?php if($row['Objective ID'] == '1'){?>
 		<tr>
