@@ -1,44 +1,29 @@
+<?php include("header.php"); ?>
+
+<div class="titlename" data-title="Redirecting...">
+
 <?php
-
-
 
 //Run a PHP script that connects to Database.
 
 
+include ("account.php") ;
 
-
-
-include ("account_old.php") ;
-
-
+// include("user.php");
 
 // PHP script that get data from the server/browser
 
-
-
 $npi = $_REQUEST ['npi'];
-
 $taxId = $_REQUEST ['taxId'];
 
 
-
-$info = array();
-
 //execute select query
+$sql = "select * from providers where NPI = $npi and Tax_ID = $taxId";
 
-$sql = "select * from providers where NPI = $npi and Tax_ID = $taxId ";
+($result = $njhitec_db->query($sql)) or die($njhitec_db->error());
 
-
-
-($result = mysql_query($sql)) or die(mysql_error());
-
-
-
-$number = mysql_num_rows($result);
-
-// print"<br>number of row " . $number;
-
-
+$number = $result->num_rows;
+// print"<br>number of rows: " . $number;
 
 if($number > 0 ){
 
@@ -46,29 +31,20 @@ if($number > 0 ){
 
 	$_SESSION["npi"] = $npi;
 	$_SESSION["taxId"] = $taxId;
-
+	
 	//redirect user to assessment tool
-
 	// print"Redirect user to assessment tool";
-	
-	//var_dump($info);
-	//header("refresh:4; url= assessform.php"); 
-	
-	header("Location: assessform.php"); 
-
+	header("Location: assessform.php");
 }
-
  else {
-
-    //print "Invalid username or password. Try again<br>";
-
-	//echo'<a href="Sign_In.html" alt="back to form html">GO BACK </a>';
-	
-	header("Location: ServiceAuth.php");
-
+    print "Invalid username or password. Try again<br>";
+	echo'<a href="Sign_In.php" alt="back to form html">GO BACK </a>';
 }
-
-
 
 ?>
 
+</div>
+
+</body>
+
+</html>

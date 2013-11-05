@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$("title").html($(".titlename").data("title"));
 
 	var assesstitles = {};
-	var url = "test_titles";
+	var url = "test_titles.php";
 
 	$("div.objective").attr("data-test-num", function(index, value) {
 		assesstitles[value] = $(this).children("p[data-tab-row]").html();
@@ -16,8 +16,8 @@ $(document).ready(function() {
 		type: "POST",
 	}).done(function(response) {
 		title = $.parseJSON(response);
-		$("div[data-test-num]").each(function(index, value) {
-			$(this).children("p").html(title[index + 1] + ": ");
+		$("div.objective").each(function(index, value) {
+			$(this).children("p").html(title[index] + ": ");
 		});
 	});
 
