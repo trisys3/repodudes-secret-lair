@@ -14,13 +14,7 @@
 	
 	<?php
 
-	$con=mysql_connect("linuxserver01.s5-tech.com","db2_capstoneUser","NJHITECCapstone2013");
-	// Check connection
-	mysql_select_db("db2_capstone");
-	if (mysqli_connect_errno($con))
-  	{
-  	echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  	}
+	include("account_old.php");
 	
 	$query = "SELECT * FROM `objective results`";
 	$result = mysql_query($query) or die(mysql_error()) ;
