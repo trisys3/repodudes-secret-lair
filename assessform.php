@@ -7,8 +7,8 @@
 			<br />
 
 			<form id="assessform" action="assessment.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
-				<div data-test-num="1">
-					<label data-tab-row="objname">First Value: </label>
+				<div data-test-num="1" class="objective">
+					<p data-tab-row="objname">First Value: </p>
 					<select autofocus="autofocus" name="status1">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -22,8 +22,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="2">
-					<label data-tab-row="objname">Second Value: </label>
+				<div data-test-num="2" class="objective">
+					<p data-tab-row="objname">Second Value: </p>
 					<select name="status2">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -41,8 +41,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="3">
-					<label data-tab-row="objname3">Third Value: </label>
+				<div data-test-num="3" class="objective">
+					<p data-tab-row="objname3">Third Value: </p>
 					<select name="status">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -56,8 +56,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="4">
-					<label data-tab-row="objname">Fourth Value: </label>
+				<div data-test-num="4" class="objective">
+					<p data-tab-row="objname">Fourth Value: </p>
 					<select name="status4">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -71,8 +71,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="5">
-					<label data-tab-row="objname">Fifth Value: </label>
+				<div data-test-num="5" class="objective">
+					<p data-tab-row="objname">Fifth Value: </p>
 					<select name="status5">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -86,8 +86,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="6">
-					<label data-tab-row="objname">Sixth Value: </label>
+				<div data-test-num="6" class="objective">
+					<p data-tab-row="objname">Sixth Value: </p>
 					<select name="status6">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -101,8 +101,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="7">
-					<label data-tab-row="objname">Seventh Value: </label>
+				<div data-test-num="7" class="objective">
+					<p data-tab-row="objname">Seventh Value: </p>
 					<select name="status7">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -116,8 +116,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="8">
-					<label data-tab-row="objname">Eigth Value: </label>
+				<div data-test-num="8" class="objective">
+					<p data-tab-row="objname">Eigth Value: </p>
 					<select name="status8">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -131,8 +131,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="9">
-					<label data-tab-row="objname">Ninth Value: </label>
+				<div data-test-num="9" class="objective">
+					<p data-tab-row="objname">Ninth Value: </p>
 					<select name="status9">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -146,8 +146,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="10">
-					<label data-tab-row="objname">Tenth Value: </label>
+				<div data-test-num="10" class="objective">
+					<p data-tab-row="objname">Tenth Value: </p>
 					<select name="status10">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -165,8 +165,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="11">
-					<label data-tab-row="objname">Eleventh Value: </label>
+				<div data-test-num="11" class="objective">
+					<p data-tab-row="objname">Eleventh Value: </p>
 					<select name="status11">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -184,8 +184,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="12">
-					<label data-tab-row="objname">Twelfth Value: </label>
+				<div data-test-num="12" class="objective">
+					<p data-tab-row="objname">Twelfth Value: </p>
 					<select name="status12">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -199,8 +199,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="13">
-					<label data-tab-row="objname">Thirteenth Value: </label>
+				<div data-test-num="13" class="objective">
+					<p data-tab-row="objname">Thirteenth Value: </p>
 					<select name="status13">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -214,8 +214,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="14">
-					<label data-tab-row="objname">Fourteenth Value: </label>
+				<div data-test-num="14" class="objective">
+					<p data-tab-row="objname">Fourteenth Value: </p>
 					<select name="status14">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -233,8 +233,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="15">
-					<label data-tab-row="objname">Fifteenth Value: </label>
+				<div data-test-num="15" class="objective">
+					<p data-tab-row="objname">Fifteenth Value: </p>
 					<select name="status15">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -252,8 +252,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="16">
-					<label data-tab-row="objname">Sixteenth Value: </label>
+				<div data-test-num="16" class="objective">
+					<p data-tab-row="objname">Sixteenth Value: </p>
 					<select name="status16">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -271,8 +271,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="17">
-					<label data-tab-row="objname">Seventeenth Value: </label>
+				<div data-test-num="17" class="objective">
+					<p data-tab-row="objname">Seventeenth Value: </p>
 					<select name="status17">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -286,8 +286,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="18">
-					<label data-tab-row="objname">Eighteenth Value: </label>
+				<div data-test-num="18" class="objective">
+					<p data-tab-row="objname">Eighteenth Value: </p>
 					<select name="status18">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -305,8 +305,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="19">
-					<label data-tab-row="objname">Nineteenth Value: </label>
+				<div data-test-num="19" class="objective">
+					<p data-tab-row="objname">Nineteenth Value: </p>
 					<select name="status19">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -320,8 +320,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="20">
-					<label data-tab-row="objname">Twentieth Value: </label>
+				<div data-test-num="20" class="objective">
+					<p data-tab-row="objname">Twentieth Value: </p>
 					<select name="status20">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -335,8 +335,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="21">
-					<label data-tab-row="objname">Twenty-First Value: </label>
+				<div data-test-num="21" class="objective">
+					<p data-tab-row="objname">Twenty-First Value: </p>
 					<select name="status21">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -350,8 +350,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="22">
-					<label data-tab-row="objname">Twenty-Second Value: </label>
+				<div data-test-num="22" class="objective">
+					<p data-tab-row="objname">Twenty-Second Value: </p>
 					<select name="status22">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -365,8 +365,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="23">
-					<label data-tab-row="objname">Twenty-Third Value: </label>
+				<div data-test-num="23" class="objective">
+					<p data-tab-row="objname">Twenty-Third Value: </p>
 					<select name="status23">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -380,8 +380,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="24">
-					<label data-tab-row="objname">Twenty-Fourth Value: </label>
+				<div data-test-num="24" class="objective">
+					<p data-tab-row="objname">Twenty-Fourth Value: </p>
 					<select name="status24">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
@@ -399,8 +399,8 @@
 					<br />
 					<br />
 				</div>
-				<div data-test-num="25">
-					<label data-tab-row="objname">Twenty-Fifth Value: </label>
+				<div data-test-num="25" class="objective">
+					<p data-tab-row="objname">Twenty-Fifth Value: </p>
 					<select name="status25">
 						<option value="Not Started">Not started</option>
 						<option value="In Progress">In Progress</option>
