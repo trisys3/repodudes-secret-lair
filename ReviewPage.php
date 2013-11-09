@@ -1,33 +1,21 @@
-<?php session_start(); ?>
-<html lang="en">
+<?php session_start() ?>
+<?php include("header.php") ?>
 
-<head>
-	<title>Hitec Page</title>
-	<meta charset="utf-8"/>
+<open class="titlename stylesheet bodyclass" data-title="Hitec Page" data-css="test.css style.css" data-body-class="body">
 
-	<link rel="stylesheet" href="test.css" type="text/css"/>
-	<style type="text/css">
-<!--
-@import url("style.css");
--->
-</style>
-	<meta name="viewport" content="width-device-width, initial-scale-1.0">
 	
 	<?php
 
-	include("account_old.php");
+	include("account.php");
 	
-	$query = "SELECT * FROM `objective results`";
-	$result = mysqli_query($dbh, $query) or die(mysqli_error($dbh)) ;
-	$query2 = "SELECT * FROM `objective results`";
-	$result2 = mysqli_query($dbh, $query2) or die(mysqli_error($dbh)); 
-	$query3 = "SELECT * FROM `objectives`";
-	$result3 = mysqli_query($dbh, $query3) or die(mysqli_error($dbh)) ;
+	$query="SELECT * FROM `objective results`";
+	$result=$njhitec_db->query($query) or die($njhitec_db->error()) ;
+	$query2="SELECT * FROM `objective results`";
+	$result2=$njhitec_db->query($query) or die($njhitec_db->error()); 
+	$query3="SELECT * FROM `objectives`";
+	$result3=$njhitec_db->query($query3) or die($njhitec_db->error()) ;
 	
-	$query4 = "SELECT `Assessment ID` FROM `results` WHERE `NPI` = $_SESSION[npi] ORDER BY `NPI` DESC LIMIT 1 ";
-	$result4 = mysqli_query($dbh, $query4) or die(mysqli_error($dbh)); 
-	$Assess_num = mysqli_fetch_row($result4) 
-/*	
+/*
 $host="linuxserver01.s5-tech.com"; // Host name
 $username="db2_capstoneUser"; // username
 $password="NJHITECCapstone2013"; // password
@@ -54,80 +42,80 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <body class="body">
 
-<?php while($row2 = mysqli_fetch_array($result2)){  
-	if($row2['Assessment ID'] == $Assess_num && $row2['Objective ID'] == '1' && $row2['Percent Completed'] * 100 >= '30' ){
+<?php while($row2 = $result2->fetch_array()){  
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '1' && $row2['Percent Completed'] * 100 >= '30' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num  && $row2['Objective ID'] == '2' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '2' && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num  && $row2['Objective ID'] == '3' && $row2['Percent Completed'] * 100 >= '40' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '3' && $row2['Percent Completed'] * 100 >= '40' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '4' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '4' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '5' && $row2['Percent Completed'] * 100 >= '80' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '5' && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '6' && $row2['Percent Completed'] * 100 >= '80' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '6' && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '7' && $row2['Percent Completed'] * 100 >= '80' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '7' && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '8' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '8' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '9' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '9' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '10' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '10' && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '11' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '11' && $row2['Percent Completed'] * 100 == '100' ){
 		//$Core++;
 		}	
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '12' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '12' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '13' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '13' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '14' && $row2['Percent Completed'] * 100 >= '0' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '14' && $row2['Percent Completed'] * 100 >= '0' ){
 		//$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '15' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '15' && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '16' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '16' && $row2['Percent Completed'] * 100 == '100' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '17' && $row2['Percent Completed'] * 100 >= '40' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '17' && $row2['Percent Completed'] * 100 >= '40' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '18' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '18' && $row2['Percent Completed'] * 100 == '100' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '19' && $row2['Percent Completed'] * 100 >= '20' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '19' && $row2['Percent Completed'] * 100 >= '20' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '20' && $row2['Percent Completed'] * 100 >= '10' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '20' && $row2['Percent Completed'] * 100 >= '10' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '21' && $row2['Percent Completed'] * 100 >= '10' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '21' && $row2['Percent Completed'] * 100 >= '10' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '22' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '22' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '23' && $row2['Percent Completed'] * 100 >= '50' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '23' && $row2['Percent Completed'] * 100 >= '50' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '24' && $row2['Percent Completed'] * 100 >= '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '24' && $row2['Percent Completed'] * 100 >= '100' ){
 		$Public++;
 		}
-	if($row2['Assessment ID'] == $Assess_Num && $row2['Objective ID'] == '25' && $row2['Percent Completed'] * 100 >= '100' ){
+	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '25' && $row2['Percent Completed'] * 100 >= '100' ){
 		$Public++;
 		}
 	
@@ -163,8 +151,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 			<td>Menu Criteria Achieved</td>
 			<td><?php echo $Menu; ?> out of 8</td>
         	<td><?php echo ($Menu/8)*100; ?>%</td>
-			<td <?php if ((4 - $Menu) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
-			<?php if ((4 - $Menu) <= '0') {echo "You have met the requirements";} else{echo "Need to meet ".(4-$Public)." more Menu Criteria";}?> 
+			<td <?php if ((8 - $Menu) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
+			<?php if ((8 - $Menu) <= '0') {echo "You have met the requirements";} else{echo "Need to meet ".(8-$Menu)." more Menu Criteria";}?> 
 			</td>
 			
         </tr>
@@ -212,7 +200,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     </thead>
 </div>
 
-<?php while($row = mysqli_fetch_array($result)){  if($row['Assessment ID'] == '0'){?>
+<?php while($row = $result->fetch_array()){  if($row['Assessment ID'] == '0'){?>
 <tbody>
 	<?php if($row['Objective ID'] == '1'){?>
 		<tr>
@@ -524,7 +512,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<?php if($row['Objective ID'] == '21'){ ?>
 		<tr>
 			
-			<td><?php echo $row['Objective Complete']; ?></td>
+			<td><?php echo $row['Objective ID']; ?></td>
 			<td>Use certified EHR technology to identify patient-specific education resources and provide 
 			those resources to the patient if appropriate.</td>
         	<td>More than 10% of all unique patients seen by the EP during the EHR reporting period are 
@@ -608,6 +596,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 <br>
 <td><button type='button'> Save and Exit</button></td>
 </tr>
+</open>
 </body>
     </tbody>
 

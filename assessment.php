@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 
-	<div class="titlename" data-title="Redirecting...">
+	<div class="titlename stylesheet" data-title="Redirecting..." data-css="">
 
 		<p>Redirecting to results page...</p>
 

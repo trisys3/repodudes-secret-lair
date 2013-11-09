@@ -1,8 +1,8 @@
 <?php include("header.php"); ?>
-<div class="titlename" data-title="Redirecting...">
+<div class="titlename stylesheet" data-title="Redirecting..." data-css="form_style.css">
 	<div id="Main_content">
 
-	<form id="SignIn" action="logIn.php" method="post"  >
+	<form id="SignIn" action="logIn.php" method="post">
 
 
 

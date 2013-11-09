@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
-	<div class="titlename" data-title="">
+	<div class="titlename stylesheet" data-title="" data-css="form_style.css">
 				<br><br>
-		<form id="form" action="add_info.php" method="post"  >
+		<form id="form" action="add_info.php" method="post">
 
 			<div id="content">
 			  
