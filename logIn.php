@@ -27,8 +27,6 @@ $number = $result->num_rows;
 
 if($number > 0 ){
 
-	session_start();
-
 	$_SESSION["npi"] = $npi;
 	$_SESSION["taxId"] = $taxId;
 	

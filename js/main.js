@@ -6,7 +6,7 @@ $(document).ready(function() {
 	$("body").attr("class", $(".bodyclass").data("bodyClass"));
 	var stylesheets = $(".stylesheet").data("css").split(" ");
 	$.each(stylesheets, function(index, value) {
-		$("head").append("<link rel='stylesheet' type='text/css' href='" + value + "' />");
+		$("head").append("<link rel='stylesheet' type='text/css' href='css/" + value + "' />");
 	});
 
 	// this updates the assessment page with the correct names from the

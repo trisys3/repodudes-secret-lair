@@ -1,19 +1,37 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <?php include("header.php") ?>
 
 <open class="titlename stylesheet bodyclass" data-title="Hitec Page" data-css="test.css style.css" data-body-class="body">
 
 	
 	<?php
-
+	
 	include("account.php");
 	
-	$query="SELECT * FROM `objective results`";
+
+	$query4="SELECT * FROM `objective results` ORDER BY `Assessment ID` DESC LIMIT 1";
+	
+	$result4=$njhitec_db->query($query4) or die($njhitec_db->error()) ;
+	$row4 = $result4->fetch_array();
+	
+	$assess_number= $row4['Assessment ID'];
+
+	$query="SELECT * FROM `objective results` WHERE `Assessment ID`='$assess_number'";
 	$result=$njhitec_db->query($query) or die($njhitec_db->error()) ;
-	$query2="SELECT * FROM `objective results`";
+
+	
+
+	$query2="SELECT * FROM `objective results` WHERE `Assessment ID`='$assess_number'";
 	$result2=$njhitec_db->query($query) or die($njhitec_db->error()); 
-	$query3="SELECT * FROM `objectives`";
+
+	
+	$query3="SELECT * FROM `objectives` ";
 	$result3=$njhitec_db->query($query3) or die($njhitec_db->error()) ;
+	$row3 = $result3->fetch_array();
+
+	$query_cat="SELECT * FROM `objective categories`";
+	$result_cat=$njhitec_db->query($query_cat) or die($njhitec_db->error()) ;
+
 	
 /*
 $host="linuxserver01.s5-tech.com"; // Host name
@@ -35,6 +53,7 @@ $statement->execute();
 // get an array with all the results
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 */
+
 ?>
 
 	<?php $Core=0; $Menu=0; $Public=0;?>
@@ -43,79 +62,79 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 <body class="body">
 
 <?php while($row2 = $result2->fetch_array()){  
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '1' && $row2['Percent Completed'] * 100 >= '30' ){
+	if( $row2['Objective ID'] == '1' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '30' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '2' && $row2['Percent Completed'] * 100 == '100' ){
+	if( $row2['Objective ID'] == '2' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '3' && $row2['Percent Completed'] * 100 >= '40' ){
+	if( $row2['Objective ID'] == '3' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '40' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '4' && $row2['Percent Completed'] * 100 >= '50' ){
+	if( $row2['Objective ID'] == '4' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '5' && $row2['Percent Completed'] * 100 >= '80' ){
+	if( $row2['Objective ID'] == '5' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '6' && $row2['Percent Completed'] * 100 >= '80' ){
+	if( $row2['Objective ID'] == '6' &&  $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '7' && $row2['Percent Completed'] * 100 >= '80' ){
+	if( $row2['Objective ID'] == '7' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '80' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '8' && $row2['Percent Completed'] * 100 >= '50' ){
+	if( $row2['Objective ID'] == '8' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '9' && $row2['Percent Completed'] * 100 >= '50' ){
+	if( $row2['Objective ID'] == '9' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '10' && $row2['Percent Completed'] * 100 == '100' ){
+	if( $row2['Objective ID'] == '10' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '11' && $row2['Percent Completed'] * 100 == '100' ){
+	if( $row2['Objective ID'] == '11' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 == '100' ){
 		//$Core++;
 		}	
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '12' && $row2['Percent Completed'] * 100 >= '50' ){
+	if( $row2['Objective ID'] == '12' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '13' && $row2['Percent Completed'] * 100 >= '50' ){
+	if( $row2['Objective ID'] == '13' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '50' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '14' && $row2['Percent Completed'] * 100 >= '0' ){
+	if( $row2['Objective ID'] == '14' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '0' ){
 		//$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '15' && $row2['Percent Completed'] * 100 == '100' ){
+	if( $row2['Objective ID'] == '15' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 == '100' ){
 		$Core++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '16' && $row2['Percent Completed'] * 100 == '100' ){
+	if( $row2['Objective ID'] == '16' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 == '100' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '17' && $row2['Percent Completed'] * 100 >= '40' ){
+	if( $row2['Objective ID'] == '17' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '40' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '18' && $row2['Percent Completed'] * 100 == '100' ){
+	if($row2['Objective ID'] == '18' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 == '100' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '19' && $row2['Percent Completed'] * 100 >= '20' ){
+	if( $row2['Objective ID'] == '19' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '20' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '20' && $row2['Percent Completed'] * 100 >= '10' ){
+	if( $row2['Objective ID'] == '20' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '10' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '21' && $row2['Percent Completed'] * 100 >= '10' ){
+	if( $row2['Objective ID'] == '21' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '10' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '22' && $row2['Percent Completed'] * 100 >= '50' ){
+	if( $row2['Objective ID'] == '22' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '50' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '23' && $row2['Percent Completed'] * 100 >= '50' ){
+	if( $row2['Objective ID'] == '23' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '50' ){
 		$Menu++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '24' && $row2['Percent Completed'] * 100 >= '100' ){
+	if( $row2['Objective ID'] == '24' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '100' ){
 		$Public++;
 		}
-	if($row2['Assessment ID'] == /*$_POST[Assess_Num] */ '0' && $row2['Objective ID'] == '25' && $row2['Percent Completed'] * 100 >= '100' ){
+	if( $row2['Objective ID'] == '25' && $assess_number = $row2['Assessment ID'] && $row2['Percent Completed'] * 100 >= '100' ){
 		$Public++;
 		}
 	
@@ -123,7 +142,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 <aside>
-<h1>Total Results</h1>
+<h1>Total Results </h1> 
 <table id="hor-minimalist-b" summary="Final Data">
 <thead>
     	<tr>
@@ -187,7 +206,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 <h1>Core Measures</h1>
 </div>
 
-<div id="main_Review">
+<div id="main_review">
 <table id="hor-minimalist-b" summary="Survey Data">
     <thead>
     	<tr>
@@ -200,33 +219,35 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     </thead>
 </div>
 
-<?php while($row = $result->fetch_array()){  if($row['Assessment ID'] == '0'){?>
+<?php while($row = $result->fetch_array()){  
+
+
+if($row['Assessment ID'] = '$assess_number'){?>
+
 <tbody>
-	<?php if($row['Objective ID'] == '1'){?>
+	<?php if($row['Objective ID'] == '1' && $row3['Objective ID'] == '1'){?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?> </td>
 
-			<td>Use Computerized Physician Order Entry (CPOE) for medication 
-			orders directly entered by any licensed healthcare professional</td>
-        	<td>More than 30% of unique patients with at least one medication in their medication list seen by 
-			the EP have at least one medication order entered using CPOE</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
 
-            <td <?php if (($row['Percent Completed']*100)>='30') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
+            <td <?php if (($row['Percent Completed']*100)>=$row3['Threshold'] * 100) {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed'] * 100; ?>
 	    %</td>
 
-			<td>30%</td>
+			<td><?php echo ($row3['Threshold'] * 100)?>%</td>
 			
         </tr>
 		<?php } ?>
 		
-		<?php if($row['Objective ID'] == '2'){ ?>
+		<?php if($row['Objective ID'] == '2' ){ ?>
         <tr>
         	
 			<td><?php echo $row['Objective ID']; ?></td>
-        	<td>Implement drug-drug and drug-allergy interactions checks.</td>
-        	<td>The EP has enabled this functionality.</td>
+        	<td><?php echo $row3['Objective Name']; ?></td>
+        	<td><?php echo $row3['Meaningful Use Measure']; ?></td>
            <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 			<?php if(($row['Percent Completed']*100)=='100') {
 				echo 'Yes';
@@ -243,9 +264,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         <tr>
         	
 			<td><?php echo $row['Objective ID'];?></td>
-        	<td>Generate and transmit permissible prescriptions electronically (eRx).</td>
-        	<td>More than 40% of all permissible prescriptions written by the EP 
-			are transmitted electronically using certified EHR technology.</td>
+        	<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed'] * 100)>='40') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed'] * 100;?>%</td>
 			<td>40%</td>
@@ -256,10 +276,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
-			<td>Record demographics: Preferred Language, 
-			Gender, Race, Ethnicity, and Date of Birth.</td>
-        	<td>More than 50% of all unique patients seen by the EP have 
-			demographics recorded as structured data.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='50') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100;?>%</td>
 			<td>50%</td>
@@ -270,10 +288,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
-			<td>Maintain an up-to-date problem list 
-			of current and active diagnoses.</td>
-        	<td>More than 80% of all unique patients seen by the EP have at least one entry or an indication that no problems are 
-			known for the patient recorded as structured data.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='80') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100;?>%</td>
 			<td>80%</td>
@@ -284,10 +300,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
-			<td>Maintain active medication list.</td>
-        	<td>More than 80% of all unique patients seen by the EP have at least one entry 
-			(or an indication that the patient is not currently prescribed any medication) 
-			recorded as structured data.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
            <td <?php if (($row['Percent Completed']*100)>='80') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100;?>%</td>
 			<td>80%</td>
@@ -298,10 +312,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
-			<td>Maintain active medication allergy list.</td>
-        	<td>More than 80% of all unique patients seen by the EP have at least one entry 
-			(or an indication that the patient has no known medication allergies) 
-			recorded as structured data.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='80') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100;?>%</td>
 			<td>80%</td>
@@ -312,10 +324,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Record and chart changes in vital signs: Height, Weight, BP, Calculate and display BMI and Plot and 
-			display growth charts for ages 2-20, including BMI.</td>
-        	<td>For more than 50% of all unique patients age 2 and over seen by the EP; height, weight and blood 
-			pressure are recorded as structured data.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='50') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row ['Percent Completed']*100;?>%</td>
 			<td>50%</td>
@@ -326,9 +336,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Record smoking status for patients 13 years old or older.</td>
-        	<td>More than 50% of all unique patients 13 years old or older seen by the EP have smoking 
-			status recorded as structured data.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='50') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>50%</td>
@@ -339,9 +348,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Implement one clinical decision support rule relevant to specialty or high clinical priority along with 
-			the ability to track compliance that rule.</td>
-        	<td>Implement one clinical decision support rule.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php if(($row['Percent Completed']*100)=='100') {
 				echo 'Yes';
@@ -357,9 +365,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Report ambulatory quality measures to CMS or the States.</td>
-        	<td>For 2011, provide aggregate numerator and denominator, and 
-			exclusions for Clinical Quality Measures</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#78AB46'";}?> >
 			<?php if(($row['Percent Completed']*100)=='100') {
 				echo 'Removed in 2013';
@@ -375,10 +382,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Provide patients with an electronic copy of their health information (including diagnostic test results, problem list, 
-			medication lists, medication allergies), upon request.</td>
-        	<td>More than 50% of all patients who request an electronic copy of their health information 
-			are provided it within 3 business days.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='50') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>50%</td>
@@ -389,9 +394,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Provide clinical summaries for patients for each office visit.</td>
-        	<td>Clinical summaries provided to patients for more than 50 percent of all 
-			office visits within 3 business days.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='50') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>50%</td>
@@ -402,10 +406,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Capability to electronically exchange key clinical information (e.g., problem list, medication list, medication allergies, diagnostic test results) among providers of 
-			care and patient authorized entities.</td>
-        	<td>Performed at least one test of certified EHR technology's capacity to 
-			electronically exchange key clinical information.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td bgcolor='#78AB46'>Removed in 2013</td>
 			<td>Yes</td>
 			
@@ -415,10 +417,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Protect electronic health information created or maintained by the certified EHR technology through the implementation 
-			of appropriate technical capabilities.</td>
-        	<td>Conduct or review a security risk analysis per 45 CFR 164.308 (a)(1) and implement security updates as necessary and correct identified security deficiencies 
-			as part of its risk management process.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
 
             <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php if(($row['Percent Completed']*100)=='100') {
@@ -435,9 +435,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Implement drug-formulary checks.</td>
-        	<td>The EP has enabled this functionality and has access to at least 
-			one internal or external drug formulary.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php if(($row['Percent Completed']*100)=='100') {
 				echo 'Yes';
@@ -453,9 +452,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Incorporate clinical lab-test results into EHR as structured data.</td>
-        	<td>More than 40% of all clinical lab tests results ordered by the EP during the EHR reporting period whose results are either in a positive/negative or numerical format are incorporated 
-			in certified EHR technology as structured data.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='40') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>40%</td>
@@ -466,10 +464,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Generate lists of patients by specific conditions to use for quality improvement, 
-			reduction of disparities, research or outreach.</td>
-        	<td>Generate at least one report listing patients of the EP or 
-			eligible hospital with a specific condition.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php if(($row['Percent Completed']*100)=='100') {
 				echo 'Yes';
@@ -485,10 +481,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Send reminders to patients per patient preference 
-			for preventive/follow up care.</td>
-        	<td>More than 20% of all unique patients 65 years or older or 5 years old or younger were sent an appropriate 
-			reminder during the EHR reporting period.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='20') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>20%</td>
@@ -499,10 +493,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Provide patients with timely electronic access to their health information (including lab results, problem list, medication lists, medication allergies) within four business days of 
-			the information being available to the EP.</td>
-        	<td>More than 10% of all unique patients seen by the EP are provided timely (available to the patient within four business days of being updated in the certified EHR technology) electronic access to their health 
-			information subject to the EP\92s discretion to withhold certain information.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='10') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>10%</td>
@@ -513,10 +505,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Use certified EHR technology to identify patient-specific education resources and provide 
-			those resources to the patient if appropriate.</td>
-        	<td>More than 10% of all unique patients seen by the EP during the EHR reporting period are 
-			provided patient-specific education resources.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='10') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>10%</td>
@@ -527,10 +517,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>The EP who receives a patient from another setting of care or provider of care or believes an encounter is relevant 
-			should perform medication reconciliation.</td>
-        	<td>The EP performs medication reconciliation 
-			for more than 50% of transitions of care.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='50') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>50%</td>
@@ -541,10 +529,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>The EP who transitions their patient to another setting of care or provider of care or refers their patient to another provider of care 
-			should provide summary of care record for each transition of care or referral.</td>
-        	<td>Provide summary of care record for 
-			more than 50 percent of transitions of care and referrals.</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
             <td <?php if (($row['Percent Completed']*100)>='50') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php echo $row['Percent Completed']*100; ?>%</td>
 			<td>50%</td>
@@ -555,10 +541,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Capability to submit electronic data to immunization registries or Immunization Information Systems and actual submission 
-			in accordance with applicable law and practice.</td>
-        	<td>Perform at least one test of certified EHR technology's capacity to submit electronic data to immunization registries and follow up submission if the test is successful (unless none of the immunization registries to which the EP or eligible hospital submits such information have the 
-			capacity to receive the information electronically).</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
 
             <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php if(($row['Percent Completed']*100)=='100') {
@@ -575,10 +559,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
-			<td>Capability to submit electronic syndromic surveillance data to public health agencies and actual submission 
-			in accordance with applicable law and practice.</td>
-        	<td>Performed at least one test of certified EHR technology's capacity to provide electronic syndromic surveillance data to public health agencies and follow-up submission if the test is successful (unless none of the public health agencies to which an EP submits such 
-			information have the capacity to receive the information electronically).</td>
+			<td><?php echo $row3['Objective Name']; ?></td>
+        		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
            <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 		<?php if(($row['Percent Completed']*100)=='100') {
 				echo 'Yes';
@@ -589,12 +571,11 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 			<td>Yes</td>
 			
         </tr>
-        <?php } ?>
+        <?php  } ?>
 <tr>		<?php } } ?>
 <br>
 <td><button type='button'> Exit</button></td>
 <br>
-<td><button type='button'> Save and Exit</button></td>
 </tr>
 </open>
 </body>
