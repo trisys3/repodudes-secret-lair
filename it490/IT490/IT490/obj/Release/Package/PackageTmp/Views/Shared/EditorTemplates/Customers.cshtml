@@ -1,0 +1,12 @@
+﻿@model int
+
+@{
+    var customers = ViewData["Customers"] as IEnumerable<CustomerDTO>;
+}
+
+@(Html.Kendo().DropDownListFor(x => Model)
+    .BindTo(customers)
+    .DataTextField("Name")
+    .DataValueField("ID")
+    .OptionLabel("Select a Customer")
+)

@@ -1,0 +1,28 @@
+Domain	mehulvaghani.com
+Username	a1043404
+Password	******
+Disk Usage	0.02 / 1500.0 MB
+Bandwidth	100000 MB (100GB)
+Home Root	/home/a1043404
+Server Name	server21.000webhost.com
+IP Address	31.170.160.85
+Apache ver.	2.2.19 (Unix)
+PHP version	5.2.*
+MySQL ver.	5.1
+
+MySQL Host for any database in this account is mysql5.000webhost.com , do not use localhost!
+
+Account wrongwayairlines.host22.com with username a7861990 and password mehul1 has been created!
+
+$mysql_host = "mysql8.000webhost.com";
+$mysql_database = "a7861990_testone";
+$mysql_user = "a7861990_mrv7";
+$mysql_password = "mehul1";
+
+FTP details for wrongwayairlines.host22.com
+
+FTP host name	wrongwayairlines.host22.com
+FTP user name	a7861990
+FTP password	mehul1
+Folder to upload files	public_html
+http://sql8.000webhost.com/phpMyAdmin/index.php

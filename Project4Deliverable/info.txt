@@ -1,0 +1,34 @@
+website link :
+
+ http://web.njit.edu/~lfs4/it490/WWA_Inbound.htm
+
+
+
+
+database login info: 
+
+
+http://web.njit.edu/mysql/phpMyAdmin/
+
+username: rdc9_proj
+password: XmyrQRw9T
+sql2.njit.edu
+
+Tables:
+ 
+Fight
+Outbound
+Cargo
+
+Java Client: 
+
+Extract the project folder from the StandaloneClient490.zip file
+
+In eclipse select import->geneeral->existing project into workspace
+
+browse to extracted to project folder
+
+run project from Initilize.java
+
+I'm not too familiar with exporting java projects from Eclipse, if this doesn't work or
+there is a more effective way to do this then the way I was doing it please let me know.

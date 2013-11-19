@@ -1,0 +1,58 @@
+﻿@model IEnumerable<InvoiceDTO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type = "text/javascript">
+    var selected = [];
+
+    function InvoiceSave(e) {
+        var items = e.model.Items;
+
+        e.model.ItemIDs = '';
+
+        for (var i = 0; i < items.length; i++) {
+            selected.push(items[i].ID);
+        }
+
+        e.model.ItemIDs = selected.toString();
+    }
+</script>
+
+<h2>Invoices</h2>
+
+@(Html.Kendo().Grid(Model)
+    .Name("Invoices")
+    .ToolBar(bar => bar.Create())
+    .Columns(col =>
+    {
+        col.Bound(x => x.CustomerName);
+        col.Bound(x => x.ItemNames);
+        col.Bound(x => x.AmountBillable);
+        col.Command(cmd =>
+        {
+            cmd.Edit();
+            cmd.Destroy();
+        });
+    })
+    .DataSource(data =>
+    {
+        data.Ajax()
+            .Model(m => m.Id(x => x.ID))
+            .Create(c => c.Action("Create", "Invoice"))
+            .Read(r => r.Action("Read", "Invoice"))
+            .Update(u => u.Action("Update", "Invoice"))
+            .Destroy(d => d.Action("Destroy", "Invoice"));
+    })
+    .Editable(edit => edit.Mode(GridEditMode.PopUp))
+    .Events(evt =>
+    {
+        evt.Save("InvoiceSave");
+    })
+)
+
+
+
