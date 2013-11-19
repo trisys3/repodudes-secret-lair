@@ -1,0 +1,18 @@
+[submodule "Ayrault"]
+	path = Ayrault
+	url = git@github.com:trisys3/Ayrault.git
+[submodule "NJ_HITEC"]
+	path = NJ_HITEC
+	url = git@github.com:Lusitanian12/NJ_HITEC.git
+[submodule "vid_form"]
+	path = vid_form
+	url = ssh://git@bitbucket.org/seants/vid_form.git
+[submodule "CodeIgniter-AngularJS-App"]
+	path = CodeIgniter-AngularJS-App
+	url = https://github.com:michalsn/CodeIgniter-AngularJS-App.git
+[submodule "sample"]
+	path = sample
+	url = https://github.com:pyrocms/sample.git
+[submodule "angular-phonecat"]
+	path = angular-phonecat
+	url = git://github.com/angular/angular-phonecat.git
