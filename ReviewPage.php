@@ -27,11 +27,14 @@
 	
 	$query3="SELECT * FROM `objectives` ";
 	$result3=$njhitec_db->query($query3) or die($njhitec_db->error()) ;
-	$row3 = $result3->fetch_array();
+	
 
 	$query_cat="SELECT * FROM `objective categories`";
 	$result_cat=$njhitec_db->query($query_cat) or die($njhitec_db->error()) ;
 
+	
+
+	
 	
 /*
 $host="linuxserver01.s5-tech.com"; // Host name
@@ -158,7 +161,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
 			<td>Core Criteria Achieved</td>
 			<td><?php echo $Core; ?> out of 13</td>
-        	<td><?php echo ($Core/13)*100; ?>%</td>
+        	<td><?php echo number_format(($Core/13)*100); ?>%</td>
 			<td <?php if ((13 - $Core) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
 			<?php if ((13 - $Core) <= '0') {echo "You have met the requirements";} else{echo "Need to meet ".(13-$Core)." more core requirements";}?> 
 			</td>
@@ -169,7 +172,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
 			<td>Menu Criteria Achieved</td>
 			<td><?php echo $Menu; ?> out of 8</td>
-        	<td><?php echo ($Menu/8)*100; ?>%</td>
+        	<td><?php echo number_format((($Menu/8)*100)); ?>%</td>
 			<td <?php if ((8 - $Menu) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
 			<?php if ((8 - $Menu) <= '0') {echo "You have met the requirements";} else{echo "Need to meet ".(8-$Menu)." more Menu Criteria";}?> 
 			</td>
@@ -180,7 +183,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 			
 			<td>Public Health Measure</td>
 			<td><?php echo $Public; ?> out of 2</td>
-        	<td><?php echo ($Public/2)*100; ?>%</td>
+        	<td><?php echo number_format((($Public/2)*100)); ?>%</td>
 			<td <?php if ((2 - $Public) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
 			<?php if ((2 - $Public) <= '0'){echo "You have met the requirements";} else{echo "Need to meet ".(2-$Public)." more Public Health Measures";}?>
 			</td>
@@ -201,6 +204,66 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 </table>
 </aside>
 
+<aside2>
+<h1>More Information </h1> 
+<table id="hor-minimalist-b" summary="Final Data">
+<thead>
+    	<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Measure</th>
+        	<th scope="col">Numerator</th>
+            <th scope="col">Denominator</th>
+        </tr>
+    </thead>
+	
+	<tbody>
+    	<tr>
+			
+			<td>Core Criteria Achieved</td>
+			<td><?php echo $Core; ?> out of 13</td>
+        	<td><?php echo number_format(($Core/13)*100); ?>%</td>
+			<td <?php if ((13 - $Core) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
+			<?php if ((13 - $Core) <= '0') {echo "You have met the requirements";} else{echo "Need to meet ".(13-$Core)." more core requirements";}?> 
+			</td>
+			
+        </tr>
+		
+		<tr>
+			
+			<td>Menu Criteria Achieved</td>
+			<td><?php echo $Menu; ?> out of 8</td>
+        	<td><?php echo number_format((($Menu/8)*100)); ?>%</td>
+			<td <?php if ((8 - $Menu) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
+			<?php if ((8 - $Menu) <= '0') {echo "You have met the requirements";} else{echo "Need to meet ".(8-$Menu)." more Menu Criteria";}?> 
+			</td>
+			
+        </tr>
+		
+		<tr>
+			
+			<td>Public Health Measure</td>
+			<td><?php echo $Public; ?> out of 2</td>
+        	<td><?php echo number_format((($Public/2)*100)); ?>%</td>
+			<td <?php if ((2 - $Public) <= '0') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> > 
+			<?php if ((2 - $Public) <= '0'){echo "You have met the requirements";} else{echo "Need to meet ".(2-$Public)." more Public Health Measures";}?>
+			</td>
+			
+        </tr>
+		
+		<tr>
+			
+			<td>Final Analysis</td>
+			<td colspan="3" <?php if(((2 - $Public) <= '0') && ((8 - $Menu) <= '0') && ((13 - $Core) <= '0')){echo 				"bgcolor='#78AB46'";}
+			else{echo "bgcolor='#cc0000'";}?> >		
+			<?php if(((2 - $Public) <= '0') && ((8 - $Menu) <= '0') && ((13 - $Core) <= '0')){echo "You have no gap";}
+			else{echo "You still have a gap";}?>
+			</td>
+			
+        </tr>
+	</tbody>
+</table>
+</aside2>
+
 <div id="header">
 
 <h1>Core Measures</h1>
@@ -210,7 +273,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 <table id="hor-minimalist-b" summary="Survey Data">
     <thead>
     	<tr>
-			<th scope="col">Measure Number</th>
+			<th scope="col">Measure</th>
 			<th scope="col">Objective</th>
         	<th scope="col">Measure</th>
             <th scope="col">Percent Achieved</th>
@@ -219,13 +282,16 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     </thead>
 </div>
 
-<?php while($row = $result->fetch_array()){  
-
+<?php $a=0; while($row = $result->fetch_array()){
+	$row3 = $result3->fetch_array(); 
+	
+	$a++;
+	
 
 if($row['Assessment ID'] = '$assess_number'){?>
 
 <tbody>
-	<?php if($row['Objective ID'] == '1' && $row3['Objective ID'] == '1'){?>
+	<?php if($row['Objective ID'] == $a && $row3['Objective ID'] == $a ){?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?> </td>
@@ -233,22 +299,35 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			<td><?php echo $row3['Objective Name']; ?></td>
         		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
 
-            <td <?php if (($row['Percent Completed']*100)>=$row3['Threshold'] * 100) {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
-		<?php echo $row['Percent Completed'] * 100; ?>
-	    %</td>
+            <td <?php if (($row['Percent Completed']*100)>=$row3['Threshold']*100) 
+		{echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
+		<?php if($row['Objective ID'] == '2'||$row['Objective ID'] =='10'||$row['Objective ID'] =='11'||$row['Objective ID'] =='14'||$row['Objective ID'] =='15'||$row['Objective ID'] =='16'||$row['Objective ID'] =='18'||$row['Objective ID'] =='24'||$row['Objective ID'] =='25'){ if(($row['Percent Completed']*100)=='100') {
+				echo 'Yes';
+				}
+				else{
+				echo 'No';
+				} ?>
+				</td>
+			<td>Yes</td>
 
+			<?php } 
+			else {
+
+				echo $row['Percent Completed'] * 100; ?>
+	    %</td>
+			
 			<td><?php echo ($row3['Threshold'] * 100)?>%</td>
 			
         </tr>
-		<?php } ?>
+		<?php } } /* ?>
 		
-		<?php if($row['Objective ID'] == '2' ){ ?>
+		<?php if($row['Objective ID'] == '2' && $row3['Objective ID'] == '2' ){ ?>
         <tr>
         	
 			<td><?php echo $row['Objective ID']; ?></td>
         	<td><?php echo $row3['Objective Name']; ?></td>
         	<td><?php echo $row3['Meaningful Use Measure']; ?></td>
-           <td <?php if (($row['Percent Completed']*100)=='100') {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
+           <td <?php if (($row['Percent Completed']*100)==$row3['Threshold']*100) {echo "bgcolor='#78AB46'";} else{echo "bgcolor='#cc0000'";}?> >
 			<?php if(($row['Percent Completed']*100)=='100') {
 				echo 'Yes';
 				}
@@ -260,7 +339,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '3'){ ?>
+		<?php if($row['Objective ID'] == '3' && $row3['Objective ID'] == '3' ){ ?>
         <tr>
         	
 			<td><?php echo $row['Objective ID'];?></td>
@@ -272,7 +351,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '4'){ ?>
+		<?php if($row['Objective ID'] == '4' && $row3['Objective ID'] == '4'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
@@ -284,7 +363,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
         <?php } ?>
-		<?php if($row['Objective ID'] == '5'){ ?>
+		<?php if($row['Objective ID'] == '5'&& $row3['Objective ID'] == '5'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
@@ -296,7 +375,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '6'){ ?>
+		<?php if($row['Objective ID'] == '6'&& $row3['Objective ID'] == '6'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
@@ -308,7 +387,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '7'){ ?>
+		<?php if($row['Objective ID'] == '7'&& $row3['Objective ID'] == '7'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID'];?></td>
@@ -320,7 +399,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '8'){ ?>
+		<?php if($row['Objective ID'] == '8'&& $row3['Objective ID'] == '8'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -332,7 +411,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '9'){ ?>
+		<?php if($row['Objective ID'] == '9'&& $row3['Objective ID'] == '9'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -344,7 +423,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '10'){ ?>
+		<?php if($row['Objective ID'] == '10'&& $row3['Objective ID'] == '10'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -361,7 +440,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '11'){ ?>
+		<?php if($row['Objective ID'] == '11'&& $row3['Objective ID'] == '11'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -378,7 +457,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '12'){ ?>
+		<?php if($row['Objective ID'] == '12'&& $row3['Objective ID'] == '12'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -390,7 +469,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '13'){ ?>
+		<?php if($row['Objective ID'] == '13'&& $row3['Objective ID'] == '13'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -402,7 +481,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if( $row['Objective ID'] == '14') { ?>
+		<?php if( $row['Objective ID'] == '14'&& $row3['Objective ID'] == '14') { ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -413,7 +492,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '15'){ ?>
+		<?php if($row['Objective ID'] == '15'&& $row3['Objective ID'] == '15'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -431,7 +510,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '16'){ ?>
+		<?php if($row['Objective ID'] == '16'&& $row3['Objective ID'] == '16'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -448,7 +527,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '17'){ ?>
+		<?php if($row['Objective ID'] == '17'&& $row3['Objective ID'] == '17'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -460,7 +539,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '18'){ ?>
+		<?php if($row['Objective ID'] == '18'&& $row3['Objective ID'] == '18'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -477,7 +556,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '19'){ ?>
+		<?php if($row['Objective ID'] == '19'&& $row3['Objective ID'] == '19'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -489,7 +568,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '20'){ ?>
+		<?php if($row['Objective ID'] == '20'&& $row3['Objective ID'] == '20'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -501,7 +580,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '21'){ ?>
+		<?php if($row['Objective ID'] == '21'&& $row3['Objective ID'] == '21'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -513,7 +592,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '22'){ ?>
+		<?php if($row['Objective ID'] == '22'&& $row3['Objective ID'] == '22'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -525,7 +604,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '23'){ ?>
+		<?php if($row['Objective ID'] == '23'&& $row3['Objective ID'] == '23'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -537,7 +616,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '24'){ ?>
+		<?php if($row['Objective ID'] == '24'&& $row3['Objective ID'] == '24'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -555,7 +634,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			
         </tr>
 		<?php } ?>
-		<?php if($row['Objective ID'] == '25'){ ?>
+		<?php if($row['Objective ID'] == '25'&& $row3['Objective ID'] == '25'){ ?>
 		<tr>
 			
 			<td><?php echo $row['Objective ID']; ?></td>
@@ -571,7 +650,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			<td>Yes</td>
 			
         </tr>
-        <?php  } ?>
+        <?php  }*/  ?>
 <tr>		<?php } } ?>
 <br>
 <td><button type='button'> Exit</button></td>

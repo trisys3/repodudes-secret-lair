@@ -29,7 +29,7 @@ $(document).ready(function() {
 		}).done(function(response) {
 			title = $.parseJSON(response);
 			$("div.objective").each(function(index, value) {
-				$(this).children("p").html(title[index] + ": ");
+				$(this).children("p").html(title[index] + ":");
 			});
 		});
 	});

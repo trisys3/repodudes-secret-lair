@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 
-	<div class="titlename stylesheet" data-title="Redirecting..." data-css="">
+	<div class="titlename stylesheet bodyclass" data-title="Redirecting..." data-css="" data-body-class="assessment_body">
 
 		<p>Redirecting to results page...</p>
 
@@ -27,8 +27,8 @@ else {
 		'Assessment ID' => '0',
 	);
 }
-$assess_id = $assess_row["Assessment ID"] + 1;
-
+$assess_id = $assess_row["Assessment ID"];
+	
 // start of INSERT statement
 
 $obj_res_query = "";
@@ -52,22 +52,13 @@ for($x = 1; $x < 25; $x++) {
 		$percomp = $data["numer{$x}"];
 		$exc = 0;
 	}
-	if($percomp > 0 && $percomp < 1) {
-		$percomp = $percomp;
-	}
-	else if($percomp >= 1 && $percomp <= 100) {
-		$percomp = $percomp / 100;
-	}
-	else {
-		$percomp = 0;
-	}
 	$totam = $data["denom{$x}"];
 	$comms = $data["comments{$x}"];
 	$stat = $data["status{$x}"];
 
 	// SQL INSERT statement
-	$obj_res_query .= "INSERT INTO `objective results` (`Assessment ID`, `Objective ID`, `Percent Completed`, `Total Amount`, `Excluded`, `Comments`, `Status`) ";
-	$obj_res_query .= "VALUES ($assess_id, $x, $percomp, $totam, $exc, '$comms', '$stat');";
+	$obj_res_query .= "INSERT INTO `objective results` (`Assessment ID`, `Objective ID`, `Percent Completed`, `Total Amount`, `Excluded`, `Comments`, `Status`)
+										 VALUES ($assess_id, $x, $percomp, $totam, $exc, '$comms', '$stat');";
 }
 
 $njhitec_db->multi_query($obj_res_query);

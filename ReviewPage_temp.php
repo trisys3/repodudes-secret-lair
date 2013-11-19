@@ -31,8 +31,12 @@
 	// $result3=$njhitec_db->query($query3) or die($njhitec_db->error()) ;
 
 	// gets all relevant columns for results of the current assessment
-	$obj_results_query = "SELECT `objectives`.`Short Name`, `objective results`.`Total Amount`, `objective results`.`Percent Completed`, `objective results`.`Excluded`, `objectives`.`Threshold`, `objectives`.`Objective Categories ID`
-	FROM `objective results`, `objectives`
+	$obj_results_query = "SELECT `objectives`.`Short Name` AS `objective name`, `objective results`.`Total Amount` AS `total amount`, `objective results`.`Percent Completed` AS `percent completed`, `objective results`.`Excluded` AS `excluded`, `objectives`.`Threshold` AS `objective threshold`, `objective categories`.`Name` AS `category name`
+	FROM `objective results`
+	INNER JOIN `objectives`
+	ON `objectives`.`Objective ID` = `objective results`.`Objective ID`
+	INNER JOIN `objective categories`
+	ON `objectives`.`Objective Categories ID` = `objective categories`.`Objective Categories ID`
 	WHERE `objective results`.`Assessment ID` = $assess_num";
 	$obj_results_res = $njhitec_db->query($obj_results_query);
 	$obj_results = $obj_results_res->fetch_all(MYSQLI_ASSOC);
@@ -145,15 +149,17 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$categories = $category_results->fetch_all(MYSQLI_ASSOC);
 
 	$results = Array();
-	foreach($categories as $category => $category_value) {
-		$results[$category + 1] = 0;
+	foreach($categories as $category) {
+		$results[$category["Name"]] = 0;
 	}
 
 	foreach($obj_results as $obj_result) {
-		if($obj_result["Percent Completed"] >= $obj_result["Threshold"]) {
+		if($obj_result["Excluded"] == "1" || $obj_result["Percent Completed"] >= $obj_result["Threshold"]) {
 			$results[$obj_result["Objective Categories ID"]]++;
 		}
 	}
+var_dump($obj_results);
+var_dump($results);die;
 ?>
 
 

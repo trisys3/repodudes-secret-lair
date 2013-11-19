@@ -26,17 +26,9 @@ $goLive_date = $_REQUEST ['goLive_date'];
 
 $email = $_REQUEST ['email'];
 
-$vendor = $_REQUEST ['vendor'];
-
-
-
-$product = $_REQUEST ['product'];
-
-$version_num = $_REQUEST ['version_num'];
+$ehr_vendor = $_REQUEST ['ehr_vendor'];
 
 $register = $_REQUEST ['register'];
-
-$certificate_num = $_REQUEST ['certificate_num'];
 
 $type_medicare = $_REQUEST ['type_medicare'];
 
@@ -59,9 +51,9 @@ $practice_name = $_REQUEST ['practice_name'];
 
 
 
-		$sql = "insert into providers values ( $npi, $tax_id , '$provider_name', '$goLive_date', '$email', '$vendor', '$product', 
+		$sql = "insert into providers values ( $npi, $tax_id , '$provider_name', '$goLive_date', '$email', '$ehr_vendor',
 
-										'$version_num', '$register', '$certificate_num', '$type_medicare')";
+										'$register', '$type_medicare')";
 
 																	
 

@@ -2,13 +2,16 @@
 
 class UrlInterpreter {
 
-	var $expectedUrl = explode("/", $_SERVER["REQUEST_URI"]);
-	var $displayedUrl = explode("/",$_SERVER["SCRIPT_NAME"]);
-	var $urlName = Array();
-	var $command = "";
 
-	function urlInterpreter() {
+	public $expectedUrl;
+	public $displayedUrl;
+	public $urlName = Array();
+	public $command = "";
 
+	function UrlInterpreter() {
+
+		$expectedUrl = explode("/", $_SERVER["REQUEST_URI"]);
+		$displayedUrl = explode("/", $_SERVER["SCRIPT_NAME"]);
 		$urlName = $expectedUrl;
 	 
 		for($i= 0;$i < sizeof($displayedUrl);$i++) {

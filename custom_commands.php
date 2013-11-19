@@ -1,13 +1,12 @@
 <?php
 
-	class CommandInterpreter {
-		var $command = "";
-		var $parameters = Array();
+class CommandInterpreter {
+	var $command = "";
+	var $parameters = Array();
 
-		function commandInterpreter($function, $parameters) {
-			$this->function = $function;
-			$parameters = array_slice($command, 1);
-		}
+	function CommandInterpreter($function) {
+		$this->function = $function;
+		$parameters = array_slice($function, 1);
 	}
 
 	function getFunction() {
@@ -25,6 +24,8 @@
 	function setParams($params) {
 		$this->params = $params;
 	}
+
+}
 
 
 ?>
