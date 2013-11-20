@@ -72,7 +72,7 @@ for($x = 1; $x <= 25; $x++) {
 		$exc = 1;
 	}
 	else {
-		$percomp = $data["denom{$x}"] / $data["numer{$x}"];
+		$percomp = $data["numer{$x}"] / $data["denom{$x}"];
 		$exc = 0;
 	}
 	$totam = $data["denom{$x}"];
