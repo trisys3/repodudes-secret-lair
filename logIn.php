@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("partials/header.php"); ?>
 
 <div class="titlename stylesheet" data-title="Redirecting..." data-css="">
 

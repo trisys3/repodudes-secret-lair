@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("partials/header.php"); ?>
 
 		<div class="titlename stylesheet" data-title="Stage 1 Meaningful Use Assessment" id="assessform_page" data-css="css/menu-style.css css/nav-style.css css/njhitec-home-css.css"> 
 											
@@ -58,6 +58,22 @@
 
 			<form id="assessform" action="assessment.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
 
+				<div data-test-ques="met_with">
+
+					<label data-test-num="met_with" for="met_with">Met With </label>
+
+					<input type="text" name="met_with" value="" required="required" />
+
+				</div><br /><br />
+
+				<div data-test-ques="taken_by">
+
+					<label data-test-num="taken_by" for="taken_by">Assessment Taken By </label>
+
+					<input type="text" name="taken_by" value="" required="required" />
+
+				</div><br /><br />
+
 				<div data-test-num="1" class="objective">
 
 					<p data-tab-row="objname">First Value: </p>
@@ -74,9 +90,9 @@
 
 					</select>
 
-					<input type="text" name="numer1" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer1" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom1" value="" />
+					<input type="text" name="denom1" value="" required="required" />
 
 					<textarea name="comments1" placeholder="Comments or Concerns"></textarea>
 
@@ -106,7 +122,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -136,9 +152,9 @@
 
 					</select>
 
-					<input type="text" name="numer3" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer3" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom3" value="" />
+					<input type="text" name="denom3" value="" required="required" />
 
 					<textarea name="comments3" placeholder="Comments or Concerns"></textarea>
 
@@ -164,9 +180,9 @@
 
 					</select>
 
-					<input type="text" name="numer4" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer4" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom4" value="" />
+					<input type="text" name="denom4" value="" required="required" />
 
 					<textarea name="comments4" placeholder="Comments or Concerns"></textarea>
 
@@ -192,9 +208,9 @@
 
 					</select>
 
-					<input type="text" name="numer5" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer5" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom5" value="" />
+					<input type="text" name="denom5" value="" required="required" />
 
 					<textarea name="comments5" placeholder="Comments or Concerns"></textarea>
 
@@ -220,9 +236,9 @@
 
 					</select>
 
-					<input type="text" name="numer6" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer6" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom6" value="" />
+					<input type="text" name="denom6" value="" required="required" />
 
 					<textarea name="comments6" placeholder="Comments or Concerns"></textarea>
 
@@ -248,9 +264,9 @@
 
 					</select>
 
-					<input type="text" name="numer7" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer7" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom7" value="" />
+					<input type="text" name="denom7" value="" required="required" />
 
 					<textarea name="comments7" placeholder="Comments or Concerns"></textarea>
 
@@ -276,9 +292,9 @@
 
 					</select>
 
-					<input type="text" name="numer8" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer8" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom8" value="" />
+					<input type="text" name="denom8" value="" required="required" />
 
 					<textarea name="comments8" placeholder="Comments or Concerns"></textarea>
 
@@ -304,9 +320,9 @@
 
 					</select>
 
-					<input type="text" name="numer9" value=""  pattern="\d+" title="Please use only numbers & percents" />
+					<input type="text" name="numer9" value=""  pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom9" value="" />
+					<input type="text" name="denom9" value="" required="required" />
 
 					<textarea name="comments9" placeholder="Comments or Concerns"></textarea>
 
@@ -336,7 +352,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -370,7 +386,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -400,9 +416,9 @@
 
 					</select>
 
-					<input type="text" name="numer12" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer12" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom12" value="" />
+					<input type="text" name="denom12" value="" required="required" />
 
 					<textarea name="comments12" placeholder="Comments or Concerns"></textarea>
 
@@ -428,9 +444,9 @@
 
 					</select>
 
-					<input type="text" name="numer13" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer13" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom13" value="" />
+					<input type="text" name="denom13" value="" required="required" />
 
 					<textarea name="comments13" placeholder="Comments or Concerns"></textarea>
 
@@ -460,7 +476,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -494,7 +510,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -528,7 +544,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -558,9 +574,9 @@
 
 					</select>
 
-					<input type="text" name="numer17" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer17" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom17" value="" />
+					<input type="text" name="denom17" value="" required="required" />
 
 					<textarea name="comments17" placeholder="Comments or Concerns"></textarea>
 
@@ -590,7 +606,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -620,9 +636,9 @@
 
 					</select>
 
-					<input type="text" name="numer19" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer19" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom19" value="" />
+					<input type="text" name="denom19" value="" required="required" />
 
 					<textarea name="comments19" placeholder="Comments or Concerns"></textarea>
 
@@ -648,9 +664,9 @@
 
 					</select>
 
-					<input type="text" name="numer20" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer20" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom20" value="" />
+					<input type="text" name="denom20" value="" required="required" />
 
 					<textarea name="comments20" placeholder="Comments or Concerns"></textarea>
 
@@ -676,9 +692,9 @@
 
 					</select>
 
-					<input type="text" name="numer21" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer21" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom21" value="" />
+					<input type="text" name="denom21" value="" required="required" />
 
 					<textarea name="comments21" placeholder="Comments or Concerns"></textarea>
 
@@ -704,9 +720,9 @@
 
 					</select>
 
-					<input type="text" name="numer22" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer22" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom22" value="" />
+					<input type="text" name="denom22" value="" required="required" />
 
 					<textarea name="comments22" placeholder="Comments or Concerns"></textarea>
 
@@ -732,9 +748,9 @@
 
 					</select>
 
-					<input type="text" name="numer23" value="" pattern="\d+" title="Please use only numbers & percents"  />
+					<input type="text" name="numer23" value="" pattern="\d+" title="Please use only numbers & percents" required="required" />
 
-					<input type="text" name="denom23" value="" />
+					<input type="text" name="denom23" value="" required="required" />
 
 					<textarea name="comments23" placeholder="Comments or Concerns"></textarea>
 
@@ -764,7 +780,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 
@@ -798,7 +814,7 @@
 
 						<option value="yes">Yes</option>
 
-						<option value="no">No</option>
+						<option value="no" selected="selected">No</option>
 
 					</select>
 

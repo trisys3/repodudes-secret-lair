@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("partials/header.php"); ?>
 
 	<div class="titlename" data-title="Sign Up">
 
@@ -58,7 +58,7 @@
 
 
 
-						<input  type="text" name="tax_id" autofocus="autofocus" autocomplete="on" id="tax_id" maxlength="9" size="9" required="required" pattern="^[0-9]{9}$" />
+						<input  type="text" name="tax_id" autofocus="autofocus" autocomplete="on" id="tax_id" maxlength="9" size="9" pattern="^[0-9]{9}$" />
 
 					</li>
 
@@ -104,7 +104,7 @@
 
 
 
-						<input  type="text" name="assessed_by" id="assessed_by" autocomplete="on" required="required" />	
+						<input  type="text" name="assessed_by" id="assessed_by" autocomplete="on" />	
 
 					</li>
 
@@ -128,9 +128,9 @@
 
 
 
-						<input  type="date" name="assess_date" id="assess_date" placeholder="mm/dd/yyyy" required="required" 
+						<input  type="date" name="assess_date" id="assess_date" value="<?php echo date("D M d, Y"); ?>"  
 
-						pattern="^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/((19|20)\d\d)" autocomplete="on" />		
+						 />		
 
 					</li>
 
@@ -176,9 +176,11 @@
 
 						<label for="register">CMS Registered</label><span class="redreq">*</span>
 
+
+
 						<select name="register">
 
-							<option value="unknown">Unknown</option>
+						  <option value="unknow">Unknown</option>
 
 						  <option value="yes">Yes</option>
 
@@ -194,7 +196,7 @@
 
 						<select name="type_medicare">
 
-							<option value="unknown">Unknown</option>
+						  <option value="unknown">Unknown</option>
 
 						  <option value="medicare">Medicare</option>
 

@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("partials/header.php"); ?>
 
 	<div class="titlename stylesheet bodyclass" data-title="Redirecting..." data-css="" data-body-class="assessment_body">
 
@@ -13,27 +13,50 @@ $data = $_POST;
 $assess_id;
 $assess_query;
 $assess_res;
+$submitted_date = date("F, j Y");
+$met_with = $data["met_with"];
+$taken_by = $data["taken_by"];
 
-$assess_query = "SELECT `Assessment ID` FROM `results` WHERE `NPI`=$_SESSION[npi] ORDER BY `NPI` DESC LIMIT 1";
-
+$assess_query = "SELECT `Assessment ID`, `Assessment Finished` FROM `results` WHERE `NPI` = $_SESSION[npi] ORDER BY `Assessment ID` DESC LIMIT 1";
 $assess_res = $njhitec_db->query($assess_query);
 
 if($assess_res->num_rows > 0) {
 	$assess_row = $assess_res->fetch_array();
+	if($assess_row["Assessment Finished"] == 0) {
+		$assess_saved = true;
+	}
+	else {
+		$assess_saved = false;
+	}
 }
 else {
 	$assess_row = Array(
 		0 => '0',
 		'Assessment ID' => '0',
+		1 => '1',
+		'Assessment Finished' => '1',
 	);
+	$assess_saved = false;
 }
-$assess_id = $assess_row["Assessment ID"];
+
+$assess_npi_query = "SELECT `Assessment ID`, `Assessment Finished` FROM `results` ORDER BY `Assessment ID` DESC LIMIT 1";
+		$assess_npi_row = $njhitec_db->query($assess_npi_query)->fetch_array();
+		$assess_id = $assess_npi_row["Assessment ID"] + 1;
+
+if($assess_saved == false) {
+	$results_query = "INSERT INTO `results` (`Assessment ID`, `NPI`, `Start Date`, `Submission Date`, `Met With`, `Assessment Taken By`, `Assessment Finished`)
+										VALUES ($assess_id, $_SESSION[npi], '$met_with', '$taken_by', '$submitted_date', '$submitted_date', 1)";
+}
+else {
+	$results_query = "INSERT INTO `results` (`Assessment ID`, `NPI`, `Submission Date`, `Met With`, `Assessment Taken By`, `Assessment Finished`)
+										VALUES ($assess_id, $_SESSION[npi], '$met_with', '$taken_by', '$submitted_date', 1";
+}
+$njhitec_db->query($results_query);
 	
 // start of INSERT statement
-
 $obj_res_query = "";
 
-for($x = 1; $x < 25; $x++) {
+for($x = 1; $x <= 25; $x++) {
 
 	// values from form for putting into SQL
 	if($data["numer{$x}"] == "yes") {
@@ -49,7 +72,7 @@ for($x = 1; $x < 25; $x++) {
 		$exc = 1;
 	}
 	else {
-		$percomp = $data["numer{$x}"];
+		$percomp = $data["denom{$x}"] / $data["numer{$x}"];
 		$exc = 0;
 	}
 	$totam = $data["denom{$x}"];
