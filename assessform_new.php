@@ -1,8 +1,8 @@
 <?php include("partials/header.php"); ?>
 
-	<div class="titlename" data-title="Sign Up">
+		<div class="titlename stylesheet" data-title="Stage 1 Meaningful Use Assessment" id="assessform_page" data-css="css/menu-style.css css/nav-style.css css/njhitec-home-css.css"> 
+											
 
-				
 <div class="shadow-wrapper">
 		
 		<div class="wrapper">
@@ -30,7 +30,7 @@
 					<div class="amiant-css3-menu-navigation-bar">
 		
 						<ul class="navigation-menu nav">
-							<li class="nav-selected nav-path-selected "><a class="nav-selected nav-path-selected "  href="http://www.njhitec.org/">Home</a></li>
+							<li class="nav-selected nav-path-selected "><a class="nav-selected nav-path-selected "  href="http://www.njhitec.org/Capstone/NJ_HITEC/Sign_In.php">Home</a></li>
 							<li class="nav-with-sub"><a class="nav-with-sub" href="http://www.njhitec.org/about-us/our-mission-and-vision/"  >About Us </a></li>
 							<li class="nav-with-sub"><a class="nav-with-sub" href="http://www.njhitec.org/services/"  >Services </a></li>
 							<li class="nav-with-sub"><a class="nav-with-sub" href="http://www.njhitec.org/membership/"  >Membership </a></li>
@@ -43,152 +43,54 @@
 
 					</div>
 			</nav>
+			
+			<div id="header">
 
-	<div id="form-content">		
-		<form id="form" action="add_info.php" method="post"> 
-			<h2>Create Your Account</h2>  
+				<h1>Assessment</h1>
 
-				<ol>
+			</div>
 
-					
 
-					<li>
 
-						<label for="tax_id">Practice Tax ID</label><span class="redreq">*</span>
+			<br />
 
 
 
-						<input  type="text" name="tax_id" autofocus="autofocus" autocomplete="on" id="tax_id" maxlength="9" size="9" required="required" pattern="^[0-9]{9}$" />
+			<form id="assessform" action="assessment.php" method="post" enctype="application/x-www-form-urlencoded" name="assessform">
 
-					</li>
+				<div data-test-ques="met_with">
 
+					<label data-test-num="met_with" for="met_with">Met With </label>
 
+					<input type="text" name="met_with" value="" required="required" />
 
-					<li>
+				</div><br /><br />
 
-						<label for="practice_name">Practice Name</label><span class="redreq">*</span>
+				<div data-test-ques="taken_by">
 
+					<label data-test-num="taken_by" for="taken_by">Assessment Taken By </label>
 
+					<input type="text" name="taken_by" value="" required="required" />
 
-						<input  type="text" name="practice_name" id="practice_name" autocomplete="on" required="required" />	
+				</div><br /><br />
 
-					</li>
+				<assess-questions data-questions-page="core_1">
 
-					
+				</assess-questions>
 
-					<li>
+				<button type="submit" name="submit-button" id="submit-button" data-button-type="submit">Submit</button>
 
-						<label for="provider_name">Provider Name</label><span class="redreq">*</span>
+				<button type="button" data-button-type="previous">Prev <</button>
 
+				<button type="button" data-button-type="next">Next ></button>
 
+				<button type="button" data-button-type="save">Save</button><br />
 
-						<input  type="text" name="provider_name" id="provider_name" autocomplete="on" required="required" />	
-
-					</li>
-
-					
-
-					<li>
-
-						<label for="npi">NPI</label><span class="redreq">*</span>
-
-
-
-						<input  type="text" name="npi" id="npi" maxlength="10" size="10" autocomplete="on" required="required" pattern="^[0-9]{10}$"/>	
-
-					</li>
-
-					<li>
-
-						<label for="goLive_date">Product Go Live Date</label><span class="redreq">*</span>
-
-
-
-						<input  type="date" name="goLive_date" id="goLive_date" placeholder="mm/dd/yyyy" pattern="^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/((19|20)\d\d)" autocomplete="on" />
-
-					</li>
-
-					
-
-					<li>
-
-						<label for="email">Contact E-mail Address</label><span class="redreq">*</span>
-
-
-
-						<input type="email" name="email" id="email" autocomplete="on" required="required" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$" autocomplete="on" /><br>
-
-					</li>
-
-					
-
-					<li>
-
-						<label for="ehr_vendor">EHR Vendor</label><span class="redreq">*</span>
-
-
-
-						<input  type="text" name="ehr_vendor" id="ehr_vendor" autocomplete="on" required="required" />	
-
-					</li>
-
-					
-
-					<li>
-
-						<label for="register">CMS Registered</label><span class="redreq">*</span>
-
-						<select name="register">
-
-							<option value="unknown">Unknown</option>
-
-						  <option value="yes">Yes</option>
-
-						  <option value="no">No</option>
-
-						</select>
-
-					</li>
-
-					<li>
-
-						<label for="medicare">Medicare or Medicaid</label><span class="redreq">*</span>
-
-						<select name="type_medicare">
-
-							<option value="unknown">Unknown</option>
-
-						  <option value="medicare">Medicare</option>
-
-						  <option value="medicaid">Medicaid</option>
-
-						  <option value="neither">Neither</option>
-
-						</select>
-
-					</li>
-
-					
-
-					<br><br>
-
-					<div id="button">
-
-						<input type="submit" id="submit" value="SUBMIT" />
-
-					</div>
-
-				</ol>
 			</form>
-				
-
-		</div>
 
 		
 
-	
-	
-	<div class="cf"></div>
+		<div class="cf"></div>
 
 	
 	<footer>
@@ -225,18 +127,17 @@
 				<div class="footer-logos"></div>
 				<div class="cf"></div>
 			</footer>
+
+
+
 		</div>
+
 	</div>
 
 
-
-</body>
+	</body>
 
 
 
 </html>
-
-
-
-	
 

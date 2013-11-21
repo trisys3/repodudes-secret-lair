@@ -1,4 +1,3 @@
-
 <?php include("partials/header.php") ?>
 
 
@@ -7,6 +6,7 @@
 
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
 <script src="toggle.js"></script>
 
 <link rel="stylesheet" type="text/css" href="http://www.njhitec.org/Capstone/NJ_HITEC/css/style.css">
@@ -261,13 +261,15 @@
 	$a++;
 	
 
-if($row['Assessment ID'] = '$assess_number'){?>
+if($row['Assessment ID'] = '$assess_number'){
+ ?>
 
 <tbody>
+	
 	<?php if($row['Objective ID'] == $a && $row3['Objective ID'] == $a ){?>
 		<tr>
 			
-			<td><?php echo $row['Objective ID']; ?> </td>
+			<td onclick="toggleResults()"><?php echo $row['Objective ID']; ?> </td>
 
 			<td><?php echo $row3['Objective Name']; ?></td>
         		<td><?php echo $row3['Meaningful Use Measure']; ?></td>
@@ -286,7 +288,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 			<?php } 
 			else {
 
-				echo $row['Percent Completed'] * 100; ?>
+				echo number_format($row['Percent Completed'] * 100); ?>
 	    %</td>
 			
 			<td><?php echo ($row3['Threshold'] * 100)?>%</td>
@@ -297,7 +299,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 <br>
 
 <br>
-<td><button type='button'> Exit</button></td>
+<td><button type='button'> <a href="Sign_In.php">Exit</a></button></td>
 </tr>
 </table>
 
@@ -350,11 +352,10 @@ if($row['Assessment ID'] = '$assess_number'){?>
 
 <div id = "wrapper">
 
-<div class = "open-intro"> + </div>
-
-<div class = "close-intro"> - </div>
+<button id="z" style = "display:none;" class = "close-intro" onclick ="toggleResults2()"> Toggle </button>
 
 <div id="Results">
+<button id = "x" onclick="toggleResults()" style="position:absolute; right:0px;" >+</button>
 <table id="hor-minimalist-b" summary="Survey Data">
 <thead>Results</thead>
 <tr>
@@ -394,7 +395,7 @@ if($row['Assessment ID'] = '$assess_number'){?>
 
 <div id = "wrapper2">
 <div id="moreInfo">
-<h1>More Information </h1> 
+More Information 
 <table id="hor-minimalist-b" summary="Final Data">
 <thead>
     	
@@ -403,14 +404,11 @@ if($row['Assessment ID'] = '$assess_number'){?>
 </div>
 
 
-<div id="buttonDiv">
-<h1>Toggle Options</h1>
-<button onclick="toggleResults()">Toggle Results</button>
 
-<br>
 
-<button onclick="toggleInfo()">Toggle More Info</button>
-</div>
+
+
+
 
 </html>
 
