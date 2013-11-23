@@ -46,7 +46,7 @@
 			
 			<div id="header">
 
-				<h1>Assessment</h1>
+				<h1>Stage 1 Meaningful Use Assessment</h1>
 
 			</div>
 
