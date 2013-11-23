@@ -3579,7 +3579,7 @@ function webform_disable_page_cache() {
 /**
  * Set the necessary breadcrumb for the page we are on.
  */
-function webform_set_breadcrumb($node, $submission = NULL) {
+function webform_set_breadcrumb($node, $submission = NULL, $account=NULL) {
   $breadcrumb = drupal_get_breadcrumb();
 
   if (isset($node)) {
