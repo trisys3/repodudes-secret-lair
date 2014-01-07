@@ -1,4 +1,0 @@
-[submodule "drush"]
-	path = drush
-	url = git@github.com:drush-ops/drush.git
-	update = merge
