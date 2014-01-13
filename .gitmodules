@@ -16,3 +16,6 @@
 [submodule "vid_form"]
 	path = vid_form
 	url = git@bitbucket.org:seants/vid_form.git
+[submodule "konneka"]
+	path = konneka
+	url = git@github.com:trisys3/konneka.git
