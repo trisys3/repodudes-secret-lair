@@ -10,9 +10,6 @@
 [submodule "sample"]
 	path = sample
 	url = git@github.com:pyrocms/sample.git
-[submodule "CodeIgniter-AngularJS-App"]
-	path = CodeIgniter-AngularJS-App
-	url = git@github.com:michalsn/CodeIgniter-AngularJS-App
 [submodule "vid_form"]
 	path = vid_form
 	url = git@bitbucket.org:seants/vid_form.git
