@@ -1,7 +1,0 @@
-	td { padding:5px ; border: 1px green solid;}
-table { width: 20px; border-collpase:collapse;}     
-th {background-color:#000000; color:#FFFFFF ; text-align: left; }
-tr:nth-of-type(even) {background-color:lime ; }
-tr:nth-of-type(odd) {background-color:#dddddd ; }
-
-td:last-child{ font-size: small; }
