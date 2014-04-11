@@ -10,9 +10,7 @@
 
 		<body>
 
-		<?php var_dump($_SERVER) ?>
-
-			<?php include("$_SERVER[DOCUMENT_ROOT] . $_SERVER[REQUEST_URI]"); ?>
+			<?php include("$_SERVER[DOCUMENT_ROOT]" . "/partials" . "$_SERVER[REQUEST_URI]"); ?>
 
 		</body>
 
