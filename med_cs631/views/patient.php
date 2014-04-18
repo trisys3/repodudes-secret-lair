@@ -1,1 +1,1 @@
-<p>Hi, patient!</p>
+<data-title data-title="Patient"></data-title>
