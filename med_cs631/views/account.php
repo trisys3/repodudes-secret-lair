@@ -49,6 +49,94 @@
 			<input type="password" id="pw-sig" class="pw" name="pw" autocomplete="off" placeholder="********" required="required" />
 		</label><br />
 
+		<label id="name-lab">
+			Name:
+			<input type="text" id="name" name="name" autocomplete="on" placeholder="My Name Is" />
+		</label><br />
+		<label id="gend-lab">
+			Gender:
+			<input type="text" id="gend" name="gend" autocomplete="on" placeholder="Gender" />
+		</label><br />
+		<label id="phone-num-lab">
+			Phone Number:
+			<input type="text" id="phone-num" name="phone-num" autocomplete="on" placeholder="Phone Number" />
+		</label><br />
+		<label id="soc-sec-lab">
+			Social Security Number:
+			<input type="password" id="soc-sec" name="soc-sec" autocomplete="off" placeholder="Social Security Number" />
+		</label><br />
+
+
+		<employee-extra class="signup-extra">
+			<label id="emp-num-lab" class="employee-extra signup-extra">
+				Employment Number:
+				<input type="text" id="emp-num" name="emp-num" autocomplete="on" placeholder="Employment Number" />
+			</label><br />
+		</employee-extra>
+
+		<doctor-extra class="signup-extra">
+			<label id="doc-sal-lab" class="doctor-extra signup-extra">
+				Salary:
+				<input type="text" id="doc-sal" name="doc-sal" autocomplete="on" placeholder="Salary" />
+			</label><br />
+			<label id="doc-spec-lab" class="doctor-extra signup-extra">
+				Specialty:
+				<input type="text" id="doc-spec" name="doc-spec" autocomplete="on" placeholder="Specialty" />
+			</label><br />
+		</doctor-extra>
+
+		<nurse-extra class="signup-extra">
+			<label id="nurse-sal-lab" class="nurse-extra signup-extra">
+				Salary:
+				<input type="text" id="nurse-sal" name="nurse-sal" autocomplete="on" placeholder="Salary" />
+			</label><br />
+			<label id="nurse-grade-lab" class="nurse-extra signup-extra">
+				Grade:
+				<input type="text" id="nurse-grade" name="nurse-grade" autocomplete="on" placeholder="Grade" />
+			</label><br />
+			<label id="nurse-exp-lab" class="nurse-extra signup-extra">
+				Experience:
+				<input type="text" id="nurse-exp" name="nurse-exp" autocomplete="on" placeholder="Experience Level" />
+			</label><br />
+			<label id="nurse-surg-type-lab" class="nurse-extra signup-extra">
+				Surgery Type:
+				<input type="text" id="nurse-surg-type" name="nurse-surg-type" autocomplete="on" placeholder="Surgery Type" />
+			</label><br />
+		</nurse-extra>
+
+		<surgeon-extra class="signup-extra">
+			<label id="surg-spec-lab" class="surgeon-extra signup-extra">
+				Specialty:
+				<input type="text" id="surg-spec" name="surg-spec" autocomplete="on" placeholder="Specialty" />
+			</label><br />
+			<label id="surg-contr-type-lab" class="surgeon-extra signup-extra">
+				Contract Type:
+				<input type="text" id="surg-contr-type" name="surg-contr-type" autocomplete="on" placeholder="Contract Type" />
+			</label><br />
+			<label id="surg-contr-length-lab" class="surgeon-extra signup-extra">
+				Contract Length:
+				<input type="text" id="surg-contr-length" name="surg-contr-length" autocomplete="on" placeholder="Contract Length" />
+			</label><br />
+		</surgeon-extra>
+
+		<staff-extra class="signup-extra">
+		</staff-extra>
+
+		<patient-extra class="signup-extra">
+			<label id="pat-blood-type-lab" class="patient-extra signup-extra">
+				Blood Type:
+				<input type="text" id="pat-blood-type" name="pat-blood-type" autocomplete="on" placeholder="Blood Type" />
+			</label><br />
+			<label id="pat-nurse-lab" class="patient-extra signup-extra">
+				Attending Nurse:
+				<input type="text" id="pat-nurse" name="pat-nurse" autocomplete="on" placeholder="Nurse Jane" />
+			</label><br />
+			<label id="pat-pri-phys-lab" class="patient-extra signup-extra">
+				Primary Care Physician:
+				<input type="text" id="pat-pri-phys" name="pat-pri-phys" autocomplete="on" placeholder="Doctor John" />
+			</label><br />
+		</patient-extra>
+
 		<button id="signup-button" type="submit">Sign Up</button>
 	</form>
 </div>
@@ -60,7 +148,8 @@
 
 <div id="loggedin" class="login-page">
 	<data-title data-title="Login Successful"></data-title>
-	<p><a href="" id="signup-again">Sign Up</a>   <a href="" id="login-again">Log in Again</a>
+	<loc-sto></loc-sto>
+	<a href="" id="logout">Log out</a>
 	<?php include("$_SERVER[DOCUMENT_ROOT]" . "/views" . "$_SERVER[REQUEST_URI]"); ?>
 </div>
 
