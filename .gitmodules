@@ -7,12 +7,6 @@
 [submodule "njhitec"]
 	path = njhitec
 	url = git@github.com:Lusitanian12/NJ_HITEC.git
-[submodule "sample"]
-	path = sample
-	url = git@github.com:pyrocms/sample.git
-[submodule "vid_form"]
-	path = vid_form
-	url = git@bitbucket.org:seants/vid_form.git
 [submodule "konneka"]
 	path = konneka
 	url = git@github.com:trisys3/konneka.git
