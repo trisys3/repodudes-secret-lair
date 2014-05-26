@@ -7,3 +7,6 @@
 [submodule "angular-phonecat"]
 	path = angular-phonecat
 	url = git@github.com:angular/angular-phonecat.git
+[submodule "konneka"]
+	path = konneka
+	url = git@github.com:trisys3/konneka.git
