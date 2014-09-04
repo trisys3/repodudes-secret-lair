@@ -10,6 +10,6 @@
 [submodule "konneka"]
 	path = konneka
 	url = git@github.com:trisys3/konneka.git
-[submodule "nutritionchik"]
-	path = nutritionchik
-	url = git@github.com:trisys3/nutritionchik.git
+[submodule "nutrichik"]
+	path = nutrichik
+	url = git@github.com:trisys3/nutrichik.git
