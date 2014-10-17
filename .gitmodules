@@ -13,3 +13,6 @@
 [submodule "nutrichik"]
 	path = nutrichik
 	url = git@github.com:trisys3/nutrichik.git
+[submodule "refridged"]
+	path = refridged
+	url = git@github.com:trisys3/refridged.git
