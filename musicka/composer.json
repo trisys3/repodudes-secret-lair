@@ -1,20 +1,27 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"name": "trisys3/musicka",
+	"description": "Musical Internet of Things",
+	"keywords": ["Internet of Things"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*",
+		"phpspec/phpspec": "*"
 	},
 	"autoload": {
 		"classmap": [
-			"app/commands",
-			"app/controllers",
-			"app/models",
-			"app/database/migrations",
-			"app/database/seeds",
-			"app/tests/TestCase.php"
+			"database"
+		],
+		"psr-4": {
+			"Musicka\\": "app/"
+		}
+	},
+	"autoload-dev": {
+		"classmap": [
+			"tests/TestCase.php"
 		]
 	},
 	"scripts": {
@@ -27,11 +34,24 @@
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
+			"php -r \"copy('.env.example', '.env');\"",
 			"php artisan key:generate"
 		]
 	},
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"homepage": "https://github.com/trisys3/musicka",
+	"authors": [
+		{
+			"name": "Sean Moran",
+			"email": "sean_r_moran@msn.com",
+			"role": "developer"
+		}
+	],
+	"support": {
+		"email": "sean_r_moran@msn.com",
+		"issues": "https://github.com/trisys3/musicka/issues",
+		"wiki": "https://github.com/trisys3/musicka/wiki"
+	}
 }
